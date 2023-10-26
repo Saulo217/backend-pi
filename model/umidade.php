@@ -88,14 +88,9 @@ class Umidade
         $sql = "DELETE FROM umidade WHERE ID_Umidade = :idUmidade";
         try {
             $sth = $pdo->prepare($sql);
+            $sth->bindValue(":idUmidade", $this->getIdUmidade());
             $sth->execute();
-
-            $array = $sth->fetch(PDO::FETCH_ASSOC);
-            $this->setIdUmidade($array["ID_Umidade"]);
-            $this->setLigado($array["ligado"]);
-            $this->setUmidade($array["umidade"]);
-            $this->setDataCaptura($array["data_captura"]);
-
+            echo "Deletado com successo";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
