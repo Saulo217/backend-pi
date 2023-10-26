@@ -1,6 +1,6 @@
 <?php
 
-class Plantas_Ornamentais
+class PlantasOrnamentais
 {
     private String $nome_cientifico;
     private String $nome_popular;
