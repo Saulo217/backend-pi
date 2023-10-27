@@ -60,7 +60,7 @@ class Umidade
 
             $this->read($pdo);
 
-            echo "umidade cadastrada";
+            echo "umidade cadastrada <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
@@ -75,7 +75,7 @@ class Umidade
             $sth->execute();
 
             $array = $sth->fetchAll(PDO::FETCH_ASSOC);
-            echo "Listado com successo";
+            echo "Listado com successo <br>";
 
             return $array;
         } catch (PDOException $error) {
@@ -90,7 +90,7 @@ class Umidade
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idUmidade", $this->getIdUmidade());
             $sth->execute();
-            echo "Deletado com successo";
+            echo "Deletado com successo <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
