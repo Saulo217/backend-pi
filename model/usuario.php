@@ -4,8 +4,8 @@ class Usuario
 {
     private String $email;
     private String $nome;
-    private  $data_nascimento;
-    private  $foto;
+    private $data_nascimento;
+    private $foto;
     private String $senha;
     private String $usuario;
     private String $cargo;
@@ -134,4 +134,3 @@ class Usuario
         }
     }
 }
-?>
