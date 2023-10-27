@@ -33,7 +33,4 @@ if (!$result) {
     echo $result;
 }
 
-
-
-
 ?>
