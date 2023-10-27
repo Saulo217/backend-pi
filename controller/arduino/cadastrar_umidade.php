@@ -2,12 +2,10 @@
 require_once "../../connection.php";
 require_once "../../model/umidade.php";
 
-enum ArduinoCodes: int {
-    case Success = 0;
-    case ErrorUmidadeIsNull = 1;
-    case ErrorLigadoIsNull = 2;
-    case ErrorDataIsNull = 3;
-}
+$Success = 0;
+$ErrorUmidadeIsNull = 1;
+$ErrorLigadoIsNull = 2;
+$ErrorDataIsNull = 3;
 
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -17,9 +15,9 @@ $pdo->query("USE PI;");
 $umidade = new Umidade();
 $result = 0;
 
-$result += isset($data["umidade"]) ? ArduinoCodes::Success->value : ArduinoCodes::ErrorUmidadeIsNull->value;
-$result += isset($data["ligado"]) ? ArduinoCodes::Success->value : ArduinoCodes::ErrorLigadoIsNull->value;
-$result += isset($data["data"]) ? ArduinoCodes::Success->value : ArduinoCodes::ErrorDataIsNull->value;
+$result += isset($data["umidade"]) ? $Success : $ErrorUmidadeIsNull;
+$result += isset($data["ligado"]) ? $Success : $ErrorLigadoIsNull;
+$result += isset($data["data"]) ? $Success : $ErrorDataIsNull;
 
 if (!$result) {
     $umidade->setUmidade($data["umidade"]);

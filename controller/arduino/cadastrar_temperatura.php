@@ -2,12 +2,10 @@
 require_once "../../connection.php";
 require_once "../../model/temperatura.php";
 
-enum ArduinoCodes: int {
-    case Success = 0;
-    case ErrorTemperaturaIsNull = 1;
-    case ErrorLigadoIsNull = 2;
-    case ErrorDataIsNull = 3;
-}
+$Success = 0;
+$ErrorTemperaturaIsNull = 1;
+$ErrorLigadoIsNull = 2;
+$ErrorDataIsNull = 3;
 
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -17,9 +15,9 @@ $pdo->query("USE PI;");
 $temperatura = new Temperatura();
 $result = 0;
 
-$result += isset($data["temperatura"]) ? ArduinoCodes::Success->value : ArduinoCodes::ErrorTemperaturaIsNull->value;
-$result += isset($data["ligado"]) ? ArduinoCodes::Success->value : ArduinoCodes::ErrorLigadoIsNull->value;
-$result += isset($data["data"]) ? ArduinoCodes::Success->value : ArduinoCodes::ErrorDataIsNull->value;
+$result += isset($data["temperatura"]) ? $Success : $ErrorTemperaturaIsNull;
+$result += isset($data["ligado"]) ? $Success : $ErrorLigadoIsNull;
+$result += isset($data["data"]) ? $Success : $ErrorDataIsNull;
 
 if (!$result) {
     $temperatura->setTemperatura($data["temperatura"]);
