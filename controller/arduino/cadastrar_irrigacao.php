@@ -1,10 +1,11 @@
 <?php
+
 require_once "../../connection.php";
-require_once "../../model/temperatura.php";
+require_once "../../model/irrigacao.php";
 
 
      $Success = 0;
-     $ErrorTemperaturaIsNull = 1;
+     $ErrorIrrigacaooIsNull = 1;
      $ErrorLigadoIsNull = 2;
      $ErrorDataIsNull = 3;
 
@@ -14,15 +15,15 @@ $data = json_decode(file_get_contents("php://input"), true);
 $pdo = NewConnection('PI');
 $pdo->query("USE PI;");
 
-$temperatura = new Temperatura();
+$irrigacao = new Irrigacao();
 $result = 0;
 
-$result += isset($data["temperatura"]) ? $Success : $ErrorTemperaturaIsNull;
+$result += isset($data["irrigacao"]) ? $Success : $ErrorIrrigacaoIsNull;
 $result += isset($data["ligado"]) ? $Success : $ErrorLigadoIsNull;
 $result += isset($data["data"]) ? $Success : $ErrorDataIsNull;
 
 if (!$result) {
-    $temperatura->setTemperatura($data["temperatura"]);
+    $temperatura->setIrrigacao($data["irrigacao"]);
     $temperatura->setLigado($data["ligado"]);
     $temperatura->setDataCaptura($data["data"]);
 
@@ -32,3 +33,5 @@ if (!$result) {
 } else {
     echo $result;
 }
+
+?>

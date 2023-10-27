@@ -60,7 +60,7 @@ class Temperatura
 
             $this->read($pdo);
 
-            echo "iluminacao cadastrada <br>";
+            echo "Temperatura cadastrada <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
