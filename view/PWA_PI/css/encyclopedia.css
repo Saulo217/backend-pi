@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+  width: 100%;
+  padding: 10px 7%;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background-color: #8dc069;
+}
+
+header strong {
+  font-size: 20px;
+  color: white;
+}
+
+header button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+}
+
+.profile__logo {
+  height: 55px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85% !important;
+  margin-top: -20px;
+  row-gap: 25px;
+}
+
+.search {
+  width: 85%;
+  border-radius: 20px;
+  padding: 12px 15px;
+}
+
+.plant__cards__container {
+  margin-top: 40px;
+  display: flex;
+  row-gap: 40px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plant__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 165px;
+  width: 165px;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.plant__card img {
+  border-radius: 20px;
+  object-fit: cover;
+  filter: brightness(0.7.);
+}
+
+.plant__card span {
+  color: white;
+  z-index: 10;
+  position: absolute;
+  bottom: -2px;
+  margin: 0 auto;
+  left: 20%;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+footer {
+  height: 130px;
+  width: 100%;
+}
+
+footer img {
+  height: 130px;
+  width: 100%;
+}

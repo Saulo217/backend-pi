@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 85%;
+}
+
+.app__logo {
+  width: 40px;
+}
+
+.profile__logo {
+  width: 40px;
+}
+
+header > strong {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60%;
+  width: 58% !important;
+  z-index: 1;
+  margin-top: -50%;
+  width: 100% !important;
+}
+
+.nav__buttons {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 75% !important;
+}
+
+.nav__buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 65px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.nav__buttons button img {
+  width: 35px;
+}
+
+.plants__cards {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 50px;
+  padding: 2px 0px;
+  row-gap: 20px;
+  margin-bottom: 40px;
+}
+
+.plant__card {
+  display: flex;
+  column-gap: 5px;
+  height: 70px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.plant__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 20px;
+  width: 100%;
+}
+
+.plant__info__details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plant__info__details .link {
+  text-decoration: underline;
+  color: #4da524 !important;
+}
+
+footer {
+  position: absolute;
+  z-index: 0;
+  bottom: 0px;
+  background-color: #93d275;
+  height: 68vh;
+  width: 100%;
+}
