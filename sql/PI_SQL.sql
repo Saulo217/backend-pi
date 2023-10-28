@@ -35,7 +35,7 @@ CREATE TABLE
 CREATE TABLE
     Irrigacao (
         ID_Irrigacao int (5) primary key auto_increment,
-        quantidade decimal(5, 5),
+        quantidade decimal(10, 5),
         ligado boolean,
         tempo time,
         data date
@@ -45,7 +45,7 @@ CREATE TABLE
     Umidade (
         ID_Umidade int (5) primary key auto_increment,
         ligado boolean not null,
-        umidade decimal(5, 5) not null,
+        umidade decimal(10, 5) not null,
         data_captura timestamp
     );
 
@@ -53,7 +53,7 @@ CREATE TABLE
     Temperatura (
         ID_Temperatura int (5) primary key auto_increment,
         ligado boolean not null,
-        temperatura decimal(5, 5) not null,
+        temperatura decimal(10, 5) not null,
         data_captura timestamp
     );
 
@@ -61,7 +61,7 @@ CREATE TABLE
     NivelAgua (
         ID_Nivel_Agua int (5) primary key auto_increment,
         ligado boolean not null,
-        nivel_agua decimal(5, 5) not null,
+        nivel_agua decimal(10, 5) not null,
         data_captura timestamp
     );
 
@@ -69,7 +69,7 @@ CREATE TABLE
     Iluminacao (
         ID_Iluminacao int (5) primary key auto_increment,
         ligado boolean not null,
-        iluminacao decimal(5, 5) not null,
+        iluminacao decimal(10, 5) not null,
         data_captura timestamp
     );
 
@@ -80,10 +80,10 @@ CREATE TABLE
         data_inicio_florescimento date,
         data_fim_flroescimento date,
         idade_minima_florescimento int (5),
-        Quantidade_Agua_Regacao decimal(5, 5),
-        temperatura_ideal decimal(5, 5),
-        umidade_ideal decimal(5, 5),
-        iluminacao_ideal decimal(5, 5),
+        Quantidade_Agua_Regacao decimal(10, 5),
+        temperatura_ideal decimal(10, 5),
+        umidade_ideal decimal(10, 5),
+        iluminacao_ideal decimal(10, 5),
         foto_planta blob
     );
 
