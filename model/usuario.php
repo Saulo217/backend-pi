@@ -112,8 +112,7 @@ class Usuario
             $sth = $pdo->prepare($sql);
             $sth->execute();
 
-            $array = $sth->fetchAll(PDO::FETCH_ASSOC);
-            echo "Listado com successo <br>";
+            $array = $sth->fetch(PDO::FETCH_ASSOC);
 
             return $array;
         } catch (PDOException $error) {
