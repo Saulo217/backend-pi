@@ -96,25 +96,22 @@ class Usuario
             $sth->bindValue(":cargo", $this->getCargo());
             $sth->execute();
 
-            $this->read($pdo);
-
             echo "Usuario Cadastrado <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
     }
 
-    public function read(PDO $pdo)
+    public function readSingleUser(PDO $pdo)
     {
-        $sql = "SELECT * FROM Usuario";
+        $sql = "SELECT * FROM Usuario WHERE email = :email";
 
         try {
             $sth = $pdo->prepare($sql);
+            $sth->bindValue(":email", $this->getEmail());
             $sth->execute();
 
-            $array = $sth->fetch(PDO::FETCH_ASSOC);
-
-            return $array;
+            return $sth->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
