@@ -117,6 +117,20 @@ class Usuario
         }
     }
 
+    public function readUser(PDO $pdo)
+    {
+        $sql = "SELECT * FROM Usuario";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->execute();
+
+            return $sth->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM Usuario WHERE email = :email";

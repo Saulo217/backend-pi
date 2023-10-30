@@ -11,11 +11,11 @@ $usuario = new Usuario();
 if (isset($_POST['usuario']) && isset($_POST["senha"])) {
     $usuario->setUsuario($_POST["usuario"]);
     $usuario->setSenha($_POST["senha"]);
-    $array = $usuario->read($pdo);
+    $array = $usuario->readUser($pdo);
     if ($array['usuario'] == $usuario->getUsuario() && $array['senha'] == $usuario->getSenha()) {
-        header("location: http://localhost/backend-pi/view/PWA_PI/pages/home.html");
+        header("location: http://localhost/backend-pi/view/pages/home.php");
     } else {
-        header("location: http://localhost/backend-pi/view/PWA_PI/pages/login.html");
+        header("location: http://localhost/backend-pi/view/pages/login.php");
     }
 
 }
