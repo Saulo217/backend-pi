@@ -21,17 +21,23 @@
         <img src="../assets/app_icon.png" alt="app_logo" class="app__logo" />
         <strong>Login</strong>
       </div>
-      <form action="../../../controller/usuario/login.php" method="post" class="form" onSubi="goToPage('home')">
+      <form
+        action="http://localhost/backend-pi/controller/usuario/login.php"
+        method="post"
+        class="form"
+        onsubmit="goToPage('home')"
+      >
         <input placeholder="Usuário" type="text" name="usuario" id="" />
         <input placeholder="Senha" type="text" name="senha" id="" />
-        <input type="submit" value="login" id="button">
-        <!-- <button onclick="goToPage('home')" type="button">Login</button> -->
+        <input type="submit" value="login" id="button" />
       </form>
       <div class="sigin__options">
         <p>Não Possuí Cadastro?</p>
         <strong onclick="goToPage('cadastro')">Registre-se</strong>
       </div>
     </div>
-    <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
+    <footer>
+      <img src="../assets/footer_background.png" alt="footer_background" />
+    </footer>
   </body>
 </html>

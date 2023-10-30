@@ -24,19 +24,21 @@
       <div class="section__info">
         <img src="../assets/plant_icon.png" alt="app_logo" class="app__logo" />
       </div>
-      <form action="" class="form">
-        <label for="">Espécie</label>
-        <select name="" id="">
+      <form action="http://localhost/backend-pi/controller/planta/cadastro.php" class="form">
+        <label for="nomeCientifico">Espécie</label>
+        <select name="nomeCientifico" id="">
           <option value=""></option>
         </select>
-        <label for="">Nome Carinhoso</label>
-        <input placeholder="" type="" name="" id="" />
-        <label for="">Quando você começou a cuidar dela?</label>
-        <input placeholder="" type="text" name="" id="" />
-        <br>
+        <label for="apelido">Nome Carinhoso</label>
+        <input placeholder="" type="" name="apelido" id="" />
+        <label for="dtinicio">Quando você começou a cuidar dela?</label>
+        <input placeholder="" type="text" name="dtinicio" id="" />
+        <br />
         <button onclick="goToPage('home')" type="button">Concluir</button>
       </form>
     </div>
-    <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
+    <footer>
+      <img src="../assets/footer_background.png" alt="footer_background" />
+    </footer>
   </body>
 </html>
