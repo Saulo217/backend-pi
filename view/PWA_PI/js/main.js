@@ -4,7 +4,7 @@ function goToPage(pageName) {
     return (window.location.href = pageName + ".html");
   }
 
-  window.location.href = "http://localhost/backend-pi/pages/" + pageName + ".html";
+  window.location.href = "http://localhost/backend-pi/view/PWA_PI/pages/" + pageName + ".html";
 }
 
 function goToControllerUsuario(pageName) {
