@@ -71,20 +71,17 @@ class MinhasPlantas
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO MinahsPlantas(ID_Planta, Data_Nascimento, Apelido, Cor, email_usuario, nome_cientifico) VALUES
-        (:id_planta, :data_nascimento, :apelido, :cor, :email_usuario, :nome_cientifico)";
+        $sql = "INSERT INTO MinhasPlantas(Data_Nascimento, Apelido, Cor, email_usuario, nome_cientifico) VALUES
+        (:data_nascimento, :apelido, :cor, :email_usuario, :nome_cientifico)";
 
         try {
             $sth = $pdo->prepare($sql);
-            $sth->bindValue(":id_planta", $this->getId_planta());
             $sth->bindValue(":data_nascimento", $this->getData_nascimento());
             $sth->bindValue(":apelido", $this->getApelido());
             $sth->bindValue(":cor", $this->getCor());
             $sth->bindValue(":email_usuario", $this->getEmail_usuario());
             $sth->bindValue(":nome_cientifico", $this->getNome_cientifico());
             $sth->execute();
-
-            $this->read($pdo);
 
             echo "Minhas Plantas Cadastradas <br>";
         } catch (PDOException $error) {
@@ -122,5 +119,3 @@ class MinhasPlantas
         }
     }
 }
-
-?>

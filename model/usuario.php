@@ -104,11 +104,11 @@ class Usuario
 
     public function readSingleUser(PDO $pdo)
     {
-        $sql = "SELECT * FROM Usuario WHERE email = :email";
+        $sql = "SELECT * FROM Usuario WHERE usuario = :usuario";
 
         try {
             $sth = $pdo->prepare($sql);
-            $sth->bindValue(":email", $this->getEmail());
+            $sth->bindValue(":usuario", $this->getUsuario());
             $sth->execute();
 
             return $sth->fetch(PDO::FETCH_ASSOC);
