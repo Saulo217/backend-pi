@@ -22,7 +22,7 @@
         <strong>Login</strong>
       </div>
       <form
-        action="../../../controller/usuario/login.php"
+        action="http://localhost/backend-pi/controller/usuario/login.php"
         method="post"
         class="form"
         onsubmit="goToPage('home')"

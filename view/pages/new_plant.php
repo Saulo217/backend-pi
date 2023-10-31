@@ -24,19 +24,25 @@
       <div class="section__info">
         <img src="../assets/plant_icon.png" alt="app_logo" class="app__logo" />
       </div>
-      <form action="" class="form">
-        <label for="">Espécie</label>
-        <select name="" id="">
-          <option value=""></option>
-        </select>
-        <label for="">Nome Carinhoso</label>
-        <input placeholder="" type="" name="" id="" />
-        <label for="">Quando você começou a cuidar dela?</label>
-        <input placeholder="" type="text" name="" id="" />
-        <br>
-        <button onclick="goToPage('home')" type="button">Concluir</button>
+      <form
+        action="http://localhost/backend-pi/controller/planta/cadastro.php"
+        method="post"
+        class="form"
+      >
+        <label for="nomeCientifico">Espécie</label>
+        <input name="nomeCientifico" type="text" id="nomeCientifico" />
+        <label for="apelido">Nome Carinhoso</label>
+        <input placeholder="" type="" name="apelido" id="apelido" />
+        <label for="dtInicio">Quando você começou a cuidar dela?</label>
+        <input type="date" name="dtInicio" id="dtinicio" />
+        <label for="cor">Cor:</label>
+        <input type="color" name="cor" value="#86A789" id="cor" />
+        <br />
+        <input type="submit" value="Cadastrar" id="button" />
       </form>
     </div>
-    <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
+    <footer>
+      <img src="../assets/footer_background.png" alt="footer_background" />
+    </footer>
   </body>
 </html>

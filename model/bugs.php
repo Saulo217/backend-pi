@@ -1,10 +1,10 @@
 <?php
 
 class Bugs
-{       
+{
     private int $id_bug;
     private String $descricao;
-    private  $data_contato;
+    private $data_contato;
     private $data_correcao;
 
     public function getId_bug()
@@ -49,7 +49,7 @@ class Bugs
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Bugs(ID_Bug, descricao, data_contato, data_correcao) VALUES
+        $sql = "INSERT INTO bugs(id_bug, descricao, data_contato, data_correcao) VALUES
         (:id_bug, :descricao, :data_contato, :data_correcao)";
 
         try {
@@ -70,7 +70,7 @@ class Bugs
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM Bugs";
+        $sql = "SELECT * FROM bugs";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -87,7 +87,7 @@ class Bugs
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Bugs WHERE ID_Bug = :id_bug";
+        $sql = "DELETE FROM bugs WHERE id_bug = :id_bug";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":id_bug", $this->getId_bug());
@@ -98,5 +98,3 @@ class Bugs
         }
     }
 }
-
-?>

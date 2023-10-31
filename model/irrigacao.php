@@ -37,14 +37,15 @@ class Irrigacao
         return $this->quantidade = $quantidade;
     }
 
-    public function getTempo() {
+    public function getTempo()
+    {
         return $this->tempo;
     }
-    
-    public function setTempo($tempo) {
+
+    public function setTempo($tempo)
+    {
         $this->tempo = $tempo;
     }
-    
 
     public function getData()
     {
@@ -58,7 +59,7 @@ class Irrigacao
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Irrigacao(ligado, quantidade, data, tempo) VALUES
+        $sql = "INSERT INTO irrigacao(ligado, quantidade, data, tempo) VALUES
         (:ligado, :quantidade, :data, :tempo)";
 
         try {
@@ -79,7 +80,7 @@ class Irrigacao
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM Irrigacao";
+        $sql = "SELECT * FROM irrigacao";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -96,7 +97,7 @@ class Irrigacao
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Irrigacao WHERE ID_Irrigacao = :idIrrigacao";
+        $sql = "DELETE FROM irrigacao WHERE id_irrigacao = :idIrrigacao";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idIrrigacao", $this->getIdIrrigacao());

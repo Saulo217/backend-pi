@@ -1,5 +1,6 @@
 <?php
-class Historico {
+class Historico
+{
     private int $idHistorico;
     private int $idIluminacao;
     private int $idNivelAgua;
@@ -7,57 +8,69 @@ class Historico {
     private int $idUmidade;
     private int $idPlanta;
 
-    public function getIdHistorico() {
+    public function getIdHistorico()
+    {
         return $this->idHistorico;
     }
-    
-    public function setIdHistorico($idHistorico) {
+
+    public function setIdHistorico($idHistorico)
+    {
         $this->idHistorico = $idHistorico;
     }
 
-    public function getIdIluminacao() {
+    public function getIdIluminacao()
+    {
         return $this->idIluminacao;
     }
-    
-    public function setIdIluminacao($idIluminacao) {
+
+    public function setIdIluminacao($idIluminacao)
+    {
         $this->idIluminacao = $idIluminacao;
     }
 
-    public function getIdNivelAgua() {
+    public function getIdNivelAgua()
+    {
         return $this->idNivelAgua;
     }
-    
-    public function setIdNivelAgua($idNivelAgua) {
+
+    public function setIdNivelAgua($idNivelAgua)
+    {
         $this->idNivelAgua = $idNivelAgua;
     }
 
-    public function getIdTemperatura() {
+    public function getIdTemperatura()
+    {
         return $this->idTemperatura;
     }
-    
-    public function setIdTemperatura($idTemperatura) {
+
+    public function setIdTemperatura($idTemperatura)
+    {
         $this->idTemperatura = $idTemperatura;
     }
 
-    public function getIdUmidade() {
+    public function getIdUmidade()
+    {
         return $this->idUmidade;
     }
-    
-    public function setIdUmidade($idUmidade) {
+
+    public function setIdUmidade($idUmidade)
+    {
         $this->idUmidade = $idUmidade;
     }
 
-    public function getIdPlanta() {
+    public function getIdPlanta()
+    {
         return $this->idPlanta;
     }
-    
-    public function setIdPlanta($idPlanta) {
+
+    public function setIdPlanta($idPlanta)
+    {
         $this->idPlanta = $idPlanta;
     }
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Historico(ID_Iluminacao, ID_Nivel_Agua, ID_Temperatura, ID_Umidade, ID_Planta) VALUES
+        $sql = "INSERT INTO historico(id_iluminacao, id_nivel_agua, id_temperatura, id_umidade, id_planta) VALUES
         (:idIluminacao, :idNivelAgua, :idTemperatura, :idUmidade, :idPlanta)";
 
         try {
@@ -107,4 +120,3 @@ class Historico {
         }
     }
 }
-?>

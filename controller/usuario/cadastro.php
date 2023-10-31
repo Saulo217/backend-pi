@@ -17,8 +17,8 @@ if (isset($_POST['nome']) && isset($_POST["email"]) && isset($_POST["datanasc"])
     $usuario->setSenha($_POST["senha"]);
     $usuario->create($pdo);
 
-    header("location: http://localhost/backend-pi/view/PWA_PI/pages/home.html");
+    header("location: http://localhost/backend-pi/view/pages/home.php");
 
 } else {
-    header("location: http://localhost/backend-pi/view/PWA_PI/pages/cadastro.html");
+    header("location: http://localhost/backend-pi/view/pages/cadastro.php");
 }

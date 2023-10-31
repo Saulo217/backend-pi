@@ -85,7 +85,7 @@ class Umidade
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM umidade WHERE ID_Umidade = :idUmidade";
+        $sql = "DELETE FROM umidade WHERE id_umidade = :idUmidade";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idUmidade", $this->getIdUmidade());

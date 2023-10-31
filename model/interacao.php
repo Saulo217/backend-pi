@@ -5,7 +5,6 @@ class Interacao
     private int $idInteracao;
     private int $idBug;
     private String $emailUsuario;
-    
 
     public function getIdInteracao()
     {
@@ -37,10 +36,9 @@ class Interacao
         return $this->emailUsuario = $emailUsuario;
     }
 
-
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Interacao(ID_Interacao, ID_Bug, email_usuario) VALUES
+        $sql = "INSERT INTO interacao(id_interacao, id_bug, email_usuario) VALUES
         (:idInteracao, :idBug, :emailUsuario)";
 
         try {
@@ -60,7 +58,7 @@ class Interacao
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM Interacao";
+        $sql = "SELECT * FROM interacao";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -77,7 +75,7 @@ class Interacao
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Interacao WHERE ID_Interacao = :idInteracao";
+        $sql = "DELETE FROM interacao WHERE id_interacao = :idInteracao";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idInteracao", $this->getIdInteracao());
@@ -88,4 +86,3 @@ class Interacao
         }
     }
 }
-?>

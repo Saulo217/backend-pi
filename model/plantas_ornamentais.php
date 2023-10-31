@@ -6,13 +6,12 @@ class PlantasOrnamentais
     private String $nome_popular;
     private $data_inicio_florescimento;
     private $data_fim_florescimento;
-    private int  $idade_minima_florescimento;
+    private int $idade_minima_florescimento;
     private float $quantidade_agua_regacao;
     private float $temperatura_ideal;
     private float $umidade_ideal;
     private float $iluminacao_ideal;
-    private  $foto_planta;
-
+    private $foto_planta;
 
     public function getNome_cientifico()
     {
@@ -44,14 +43,15 @@ class PlantasOrnamentais
         return $this->data_inicio_florescimento = $data_inicio_florescimento;
     }
 
-    public function getData_fim_florescimento() {
+    public function getData_fim_florescimento()
+    {
         return $this->data_fim_florescimento;
     }
-    
-    public function setData_fim_florescimento($data_fim_florescimento) {
+
+    public function setData_fim_florescimento($data_fim_florescimento)
+    {
         $this->data_fim_florescimento = $data_fim_florescimento;
     }
-    
 
     public function getIdade_minima_florescimento()
     {
@@ -63,7 +63,6 @@ class PlantasOrnamentais
         return $this->idade_minima_florescimento = $idade_minima_florescimento;
     }
 
-   
     public function getQuantidade_agua_regacao()
     {
         return $this->quantidade_agua_regacao;
@@ -73,7 +72,6 @@ class PlantasOrnamentais
     {
         return $this->quantidade_agua_regacao = $quantidade_agua_regacao;
     }
-
 
     public function getTemperatura_ideal()
     {
@@ -85,7 +83,6 @@ class PlantasOrnamentais
         return $this->temperatura_ideal = $temperatura_ideal;
     }
 
-
     public function getUmidade_ideal()
     {
         return $this->umidade_ideal;
@@ -96,7 +93,6 @@ class PlantasOrnamentais
         return $this->umidade_ideal = $umidade_ideal;
     }
 
-
     public function getIluminacao_ideal()
     {
         return $this->iluminacao_ideal;
@@ -104,9 +100,8 @@ class PlantasOrnamentais
 
     public function setIluminacao_ideal($iluminacao_ideal)
     {
-        return $this->iluminacao_ideal= $iluminacao_ideal;
+        return $this->iluminacao_ideal = $iluminacao_ideal;
     }
-
 
     public function getFoto_planta()
     {
@@ -115,12 +110,12 @@ class PlantasOrnamentais
 
     public function setFoto_planta($foto_planta)
     {
-        return $this->foto_planta= $foto_planta;
+        return $this->foto_planta = $foto_planta;
     }
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO  PlantasOrnamentais(nome_cientifico, nome_popular, data_inicio_florescimento, data_fim_florescimento, idade_minima_florescimento, Quantidade_Agua_Regacao, temperatura_ideal, umidade_ideal, iluminacao_ideal, foto_planta) VALUES
+        $sql = "INSERT INTO  plantas_ornamentais(nome_cientifico, nome_popular, data_inicio_florescimento, data_fim_florescimento, idade_minima_florescimento, quantidade_agua_regacao, temperatura_ideal, umidade_ideal, iluminacao_ideal, foto_planta) VALUES
         (:nome_cientifico, :nome_popular, :data_inicio_florescimento, :data_fim_florescimento, :idade_minima_florescimento, :quantidade_agua_regacao,
          :temperatura_ideal, :umidade_ideal, :iluminação_ideal, :foto_planta)";
 
@@ -176,4 +171,3 @@ class PlantasOrnamentais
         }
     }
 }
-?>
