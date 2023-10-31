@@ -118,7 +118,7 @@ CREATE TABLE
         id_temperatura INT (5),
         id_umidade INT (5),
         id_planta INT (5),
-        CONSTRAINT fk_historico_iluminacao FOREIGN KEY (id_luminacao) REFERENCES iluminacao (id_iluminacao),
+        CONSTRAINT fk_historico_iluminacao FOREIGN KEY (id_iluminacao) REFERENCES iluminacao (id_iluminacao),
         CONSTRAINT fk_historico_nivel_agua FOREIGN KEY (id_nivel_agua) REFERENCES nivel_agua (id_nivel_agua),
         CONSTRAINT fk_historico_temperatura FOREIGN KEY (id_temperatura) REFERENCES temperatura (id_temperatura),
         CONSTRAINT fk_historico_umidade FOREIGN KEY (id_umidade) REFERENCES umidade (id_umidade),
