@@ -13,6 +13,7 @@ if (isset($_POST['usuario']) && isset($_POST["senha"])) {
     $usuario->setSenha($_POST["senha"]);
     $array = $usuario->readUser($pdo);
     if ($array['usuario'] == $usuario->getUsuario() && $array['senha'] == $usuario->getSenha()) {
+        setcookie("usuario", $usuario->getUsuario(), 0, '/');
         header("location: http://localhost/backend-pi/view/pages/home.php");
     } else {
         header("location: http://localhost/backend-pi/view/pages/login.php");
