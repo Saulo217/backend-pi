@@ -1,3 +1,21 @@
+<?php
+
+require_once "../../connection.php";
+require_once "../../model/usuario.php";
+
+$pdo = NewConnection('PI');
+$pdo->query('USE PI;');
+
+$usuario = new Usuario();
+if (!isset($_COOKIE['usuario'])) {
+    echo "nao existe usuario";
+} else {
+    $usuario->setUsuario($_COOKIE['usuario']);
+    $array = $usuario->readSingleUser($pdo);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,18 +41,24 @@
     <div class="main">
       <div class="profile__info">
         <img src="../assets/img_profile.png" alt="app_logo" class="app__logo" />
-        <strong>Andressa S. M.</strong>
-        <p>andresa_sm@email.com</p>
+        <strong><?php echo $array['usuario'] ?></strong>
+        <p><?php echo $array['email'] ?></p>
       </div>
       <button class="button__edit">Editar Perfil</button>
       <div class="accordions">
         <details>
           <summary>Dados do Usuário</summary>
-          <span>...</span>
+          <span>
+          <br>
+          <br>
+            <?php echo "Nome:<br>" . $array['nome'] ?><br><br>
+            <?php echo "Email:<br>" . $array['email'] ?><br><br>
+            <?php echo "Data de Nascimento:<br>" . $array['data_nascimento'] ?><br><br>
+            <?php echo "Usuario:<br>" . $array['usuario'] ?></span><br><br>
         </details>
         <details>
           <summary>Vaso</summary>
-          <span>...</span>
+          <span>..</span>
         </details>
         <details>
           <summary>Recibos</summary>
