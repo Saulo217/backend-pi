@@ -48,7 +48,7 @@ class Iluminacao
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Iluminacao(ligado, iluminacao, data_captura) VALUES
+        $sql = "INSERT INTO iluminacao(ligado, iluminacao, data_captura) VALUES
         (:ligado, :iluminacao, :data_captura)";
 
         try {
@@ -68,7 +68,7 @@ class Iluminacao
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM Iluminacao";
+        $sql = "SELECT * FROM iluminacao";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -85,7 +85,7 @@ class Iluminacao
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Iluminacao WHERE ID_Iluminacao = :idIluminacao";
+        $sql = "DELETE FROM iluminacao WHERE id_iluminacao = :idIluminacao";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idIluminacao", $this->getIdIluminacao());

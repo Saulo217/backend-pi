@@ -48,7 +48,7 @@ class NivelAgua
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO NivelAgua(ligado, nivel_agua, data_captura) VALUES
+        $sql = "INSERT INTO nivel_agua(ligado, nivel_agua, data_captura) VALUES
         (:ligado, :nivel_agua, :data_captura)";
 
         try {
@@ -68,7 +68,7 @@ class NivelAgua
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM NivelAgua";
+        $sql = "SELECT * FROM nivel_agua";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -85,7 +85,7 @@ class NivelAgua
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM NivelAgua WHERE ID_Nivel_Agua = :idNivelAgua";
+        $sql = "DELETE FROM nivel_agua WHERE id_nivel_agua = :idNivelAgua";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idNivelAgua", $this->getIdNivelAgua());

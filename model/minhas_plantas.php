@@ -71,7 +71,7 @@ class MinhasPlantas
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO MinhasPlantas(Data_Nascimento, Apelido, Cor, email_usuario, nome_cientifico) VALUES
+        $sql = "INSERT INTO minhas_plantas(data_nascimento, apelido, cor, email_usuario, nome_cientifico) VALUES
         (:data_nascimento, :apelido, :cor, :email_usuario, :nome_cientifico)";
 
         try {
@@ -91,7 +91,7 @@ class MinhasPlantas
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM MinhasPlantas";
+        $sql = "SELECT * FROM minhas_plantas AS mp LEFT JOIN usuario AS us ON mp.email = us.email";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -108,7 +108,7 @@ class MinhasPlantas
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM MinhasPlantas WHERE ID_Planta = :id_planta";
+        $sql = "DELETE FROM minhas_plantas WHERE id_planta = :id_planta";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":id_planta", $this->getId_planta());
