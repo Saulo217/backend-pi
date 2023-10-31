@@ -1,10 +1,10 @@
 <?php
 
 class Bugs
-{       
+{
     private int $id_bug;
     private String $descricao;
-    private  $data_contato;
+    private $data_contato;
     private $data_correcao;
 
     public function getId_bug()
@@ -49,12 +49,12 @@ class Bugs
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Bugs(ID_Bug, descricao, data_contato, data_correcao) VALUES
-        (:id_bug, :descricao, :data_contato, :data_correcao)";
+        $sql = "INSERT INTO Bugs( descricao, data_contato, data_correcao) VALUES
+        (:descricao, :data_contato, :data_correcao)";
 
         try {
             $sth = $pdo->prepare($sql);
-            $sth->bindValue(":id_bug", $this->getId_bug());
+
             $sth->bindValue(":descricao", $this->getDescricao());
             $sth->bindValue(":data_contato", $this->getData_contato());
             $sth->bindValue(":data_correcao", $this->getData_correcao());
@@ -98,5 +98,3 @@ class Bugs
         }
     }
 }
-
-?>
