@@ -15,12 +15,12 @@ header {
   height: 100px;
   width: 100%;
   padding: 10px 7%;
-  background-color: #8DC069;
+  background-color: #8dc069;
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
 }
 
-header strong{
+header strong {
   margin-left: -10%;
   font-size: 20px;
   color: white;
@@ -67,7 +67,8 @@ header button {
   justify-content: center;
 }
 
-.form input, select {
+.form input,
+select {
   border-radius: 10px;
   border: solid 2px #225300;
   width: 100% !important;
@@ -81,7 +82,7 @@ header button {
   margin-top: 10px;
 }
 
-.form button {
+.form #button {
   height: 40px;
   border-radius: 10px;
   background-color: #225300;

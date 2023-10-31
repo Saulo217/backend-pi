@@ -48,7 +48,7 @@ class Temperatura
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Temperatura(ligado, temperatura, data_captura) VALUES
+        $sql = "INSERT INTO temperatura(ligado, temperatura, data_captura) VALUES
         (:ligado, :temperatura, :data_captura)";
 
         try {
@@ -68,7 +68,7 @@ class Temperatura
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM Temperatura";
+        $sql = "SELECT * FROM temperatura";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -85,7 +85,7 @@ class Temperatura
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Temperatura WHERE ID_Temperatura = :idTemperatura";
+        $sql = "DELETE FROM temperatura WHERE id_temperatura = :idTemperatura";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idTemperatura", $this->getIdTemperatura());

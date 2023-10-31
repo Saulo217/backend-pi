@@ -104,7 +104,7 @@ class Usuario
 
     public function readSingleUser(PDO $pdo)
     {
-        $sql = "SELECT * FROM Usuario WHERE usuario = :usuario";
+        $sql = "SELECT * FROM usuario WHERE usuario = :usuario";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -119,7 +119,7 @@ class Usuario
 
     public function readUser(PDO $pdo)
     {
-        $sql = "SELECT * FROM Usuario";
+        $sql = "SELECT * FROM usuario";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -133,7 +133,7 @@ class Usuario
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Usuario WHERE email = :email";
+        $sql = "DELETE FROM usuario WHERE email = :email";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":email", $this->getEmail());

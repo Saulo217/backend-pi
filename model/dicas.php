@@ -8,7 +8,6 @@ class Dicas
     private String $corpo;
     private $imagensIcons;
     private String $nomeCientifico;
-    
 
     public function getIdDicas()
     {
@@ -70,13 +69,9 @@ class Dicas
         return $this->nomeCientifico = $nomeCientifico;
     }
 
-
-
-
-
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Dicas(ID_Dicas, titulo, subtitulo, corpo, imagens_icons, nome_cientifico) VALUES
+        $sql = "INSERT INTO dicas(id_dicas, titulo, subtitulo, corpo, imagens_icons, nome_cientifico) VALUES
         (:idDicas, :titulo, :subtitulo, :corpo, :imagensIcons, :nomeCientifico)";
 
         try {
@@ -99,7 +94,7 @@ class Dicas
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM Dicas";
+        $sql = "SELECT * FROM dicas";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -116,7 +111,7 @@ class Dicas
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM Dicas WHERE ID_Dicas = :idDicas";
+        $sql = "DELETE FROM dicas WHERE id_dicas = :idDicas";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":idDicas", $this->getIdDicas());
@@ -127,5 +122,3 @@ class Dicas
         }
     }
 }
-
-?>
