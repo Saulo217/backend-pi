@@ -89,16 +89,13 @@ class MinhasPlantas
         }
     }
 
-    public function read(PDO $pdo)
+    public function read(PDO $pdo, string $sql)
     {
-        $sql = "SELECT * FROM minhas_plantas AS mp LEFT JOIN usuario AS us ON mp.email = us.email";
-
         try {
             $sth = $pdo->prepare($sql);
             $sth->execute();
 
             $array = $sth->fetchAll(PDO::FETCH_ASSOC);
-            echo "Listado com successo <br>";
 
             return $array;
         } catch (PDOException $error) {
