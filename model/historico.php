@@ -107,6 +107,24 @@ class Historico
         }
     }
 
+    public function readWithPlantaID(PDO $pdo)
+    {
+        $sql = "SELECT * FROM Historico WHERE id_planta = :id_planta";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":id_planta", $this->getIdPlanta());
+            $sth->execute();
+
+            $array = $sth->fetchAll(PDO::FETCH_ASSOC);
+            echo "Listado com successo <br>";
+
+            return $array;
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM Historico WHERE ID_Historico = :idHistorico";

@@ -1,22 +1,32 @@
 <?php
 require_once "../../connection.php";
 require_once "../../model/minhas_plantas.php";
+require_once "../../model/historico.php";
+require_once "../../model/umidade.php";
+require_once "../../model/iluminacao.php";
+require_once "../../model/nivel_agua.php";
+require_once "../../model/temperatura.php";
 
 $pdo = NewConnection("smart_eco");
 $pdo->query("USE smart_eco");
 $id = $_COOKIE["id_planta"];
 
-$plantas = new MinhasPlantas();
-$array = $plantas->read(
-    $pdo,
-    " SELECT *
-      FROM minhas_plantas
-      INNER JOIN plantas_ornamentais
-      ON minhas_plantas.id_planta = historico.id_planta
-      INNER
-      WHERE id_planta = id_planta
-    "
-);
+$planta = new MinhasPlantas();
+$planta->setId_planta($id);
+$plantas = $planta->readSingle($pdo);
+
+$hist = new Historico();
+$hist->setIdPlanta($id);
+$hists = $hist->readWithPlantaID($pdo);
+
+$umi = new Umidade();
+$temp = new Temperatura();
+$nivel_agua = new NivelAgua();
+
+for ($i = 0; $i < sizeof($array); $i++) {
+    # code...
+}
+
 ?>
 
 <!DOCTYPE html>

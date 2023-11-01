@@ -83,6 +83,24 @@ class NivelAgua
         }
     }
 
+    public function readSingle(PDO $pdo)
+    {
+        $sql = "SELECT * FROM nivel_agua WHERE id_nivel_agua = :id_nivel_agua";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":id_nivel_agua", $this->getIdNivelAgua());
+            $sth->execute();
+
+            $array = $sth->fetchAll(PDO::FETCH_ASSOC);
+            echo "Listado com successo <br>";
+
+            return $array;
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM nivel_agua WHERE id_nivel_agua = :idNivelAgua";
