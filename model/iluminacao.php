@@ -83,6 +83,23 @@ class Iluminacao
         }
     }
 
+    public function readSingle(PDO $pdo)
+    {
+        $sql = "SELECT * FROM iluminacao WHERE id_iluminacao = :id_iluminacao";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->execute();
+
+            $array = $sth->fetchAll(PDO::FETCH_ASSOC);
+            echo "Listado com successo <br>";
+
+            return $array;
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM iluminacao WHERE id_iluminacao = :idIluminacao";

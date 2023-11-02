@@ -3,8 +3,8 @@ require_once "../../connection.php";
 require_once "../../model/minhas_plantas.php";
 require_once "../../model/usuario.php";
 
-$pdo = NewConnection("PI");
-$pdo->query("USE PI;");
+$pdo = NewConnection("smart_eco");
+$pdo->query("USE smart_eco;");
 
 $plantas = new MinhasPlantas();
 $usuario = new Usuario();

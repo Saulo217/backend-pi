@@ -91,14 +91,28 @@ class MinhasPlantas
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM minhas_plantas AS mp LEFT JOIN usuario AS us ON mp.email = us.email";
-
+        $sql = "SELECT * FROM minhas_plantas";
         try {
             $sth = $pdo->prepare($sql);
             $sth->execute();
 
             $array = $sth->fetchAll(PDO::FETCH_ASSOC);
-            echo "Listado com successo <br>";
+
+            return $array;
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
+    public function readSingle(PDO $pdo)
+    {
+        $sql = "SELECT * FROM minhas_plantas WHERE id_minhas_plantas = :id_minhas_plantas";
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":id_minhas_plantas", $this->getId_planta());
+            $sth->execute();
+
+            $array = $sth->fetchAll(PDO::FETCH_ASSOC);
 
             return $array;
         } catch (PDOException $error) {

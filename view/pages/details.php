@@ -1,3 +1,34 @@
+<?php
+require_once "../../connection.php";
+require_once "../../model/minhas_plantas.php";
+require_once "../../model/historico.php";
+require_once "../../model/umidade.php";
+require_once "../../model/iluminacao.php";
+require_once "../../model/nivel_agua.php";
+require_once "../../model/temperatura.php";
+
+$pdo = NewConnection("smart_eco");
+$pdo->query("USE smart_eco");
+$id = $_COOKIE["id_planta"];
+
+$planta = new MinhasPlantas();
+$planta->setId_planta($id);
+$plantas = $planta->readSingle($pdo);
+
+$hist = new Historico();
+$hist->setIdPlanta($id);
+$hists = $hist->readWithPlantaID($pdo);
+
+$umi = new Umidade();
+$temp = new Temperatura();
+$nivel_agua = new NivelAgua();
+
+for ($i = 0; $i < sizeof($array); $i++) {
+    # code...
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +51,7 @@
       <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
     </header>
     <div class="main">
-      <strong class="plant__name">Echeveria</strong>
+      <strong class="plant__name"><?php echo $array[0]["apelido"] ?></strong>
     </div>
     <div class="plant__status__cards__container">
       <div class="plant__status__card" style="background-color: #e3d6b3">
@@ -30,7 +61,7 @@
           </div>
           <span>Temperatura</span>
         </div>
-        <strong>28°c</strong>
+        <strong><?php echo $array[0]["temperatura_ideal"] ?>°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>20°c á 30ºc</p>
@@ -43,7 +74,7 @@
           </div>
           <span>Umidade</span>
         </div>
-        <strong>25°c</strong>
+        <strong><?php echo $array[0]["umidade_ideal"] ?>°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>20°c á 30ºc</p>
@@ -56,7 +87,7 @@
           </div>
           <span>Nível de água</span>
         </div>
-        <strong>13%</strong>
+        <strong><?php echo $array[0]["temperatura_ideal"] ?>%</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>20°c á 30ºc</p>

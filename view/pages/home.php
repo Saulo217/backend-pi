@@ -1,3 +1,20 @@
+<?php
+require_once "../../connection.php";
+require_once "../../model/minhas_plantas.php";
+
+$pdo = NewConnection("smart_eco");
+$pdo->query("USE smart_eco;");
+
+$plantas = new MinhasPlantas();
+$array = $plantas->read(
+    $pdo,
+    " SELECT *
+    FROM minhas_plantas
+    INNER JOIN
+    plantas_ornamentais ON minhas_plantas.nome_cientifico = plantas_ornamentais.nome_cientifico;"
+);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,40 +51,34 @@
         </button>
       </div>
       <div class="plants__cards" onclick="goToPage('details')">
-        <div class="plant__card">
-          <img src="../assets/thumb_echeveria.png" alt="" />
-          <div class="plant__info">
-            <strong>Echeveria</strong>
-            <div class="plant__info__details">
-              <div>
-                <img src="../assets/umidade_icon.png" alt="" />
-                <span>70%</span>
+        <?php
+for ($i = 0; $i < sizeof($array); $i++) {
+    setcookie("id_planta", $array[$i]["id_planta"], 0, '/');
+    $foto = $array[$i]['foto_planta'];
+    $apelido = $array[$i]['apelido'];
+    $umidade = mb_strimwidth($array[$i]['umidade_ideal'], 0, 3, "");
+    $temperatura = mb_strimwidth($array[$i]['temperatura_ideal'], 0, 3, "");
+    echo "
+              <div class='plant__card' onclick='goToPage('details')'>
+                <img src='http://localhost/backend-pi/uploads/$foto' alt='' />
+                <div class='plant__info'>
+                  <strong>$apelido</strong>
+                  <div class='plant__info__details'>
+                    <div>
+                      <img src='../assets/umidade_icon.png' alt='' />
+                      <span>$umidade %</span>
+                    </div>
+                    <div>
+                      <img src='../assets/temp_icon.png' alt='' />
+                      <span>$temperatura °C</span>
+                    </div>
+                    <span class='link'>ver mais</span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <img src="../assets/temp_icon.png" alt="" />
-                <span>25c°</span>
-              </div>
-              <span class="link">ver mais</span>
-            </div>
-          </div>
-        </div>
-        <div class="plant__card" onclick="goToPage('details')">
-          <img src="../assets/thumb_crossandra.png" alt="" />
-          <div class="plant__info">
-            <strong>Crossandra</strong>
-            <div class="plant__info__details">
-              <div>
-                <img src="../assets/umidade_icon.png" alt="" />
-                <span>23%</span>
-              </div>
-              <div>
-                <img src="../assets/temp_icon.png" alt="" />
-                <span>24c°</span>
-              </div>
-              <span class="link">ver mais</span>
-            </div>
-          </div>
-        </div>
+            ";
+}
+?>
       </div>
       <img onclick="goToPage('new_plant')"  src="../assets/add_icon.png" alt="" />
     </div>

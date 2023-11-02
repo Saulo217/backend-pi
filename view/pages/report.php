@@ -27,18 +27,22 @@
     <div class="report__window">
       <img class="window__icon" src="../assets/warnig_report_icon.png" alt="" />
       <h3>Reportar Bug</h3>
+      <form action="http://localhost/backend-pi/controller/usuario/bugs_user.php" method="post">
       <textarea
         placeholder="| por favor, nos conte aqui qual foi o problema para que possamos resolver :)"
-        name=""
+        name="bug"
         id=""
         cols="30"
         rows="10"
       ></textarea>
+
+
       <div class="buttons__options">
         <button class="send__button">Enviar</button>
         <button class="take__photo__button">
           <img src="../assets/img_icon.png" alt="" />
-        </button>
+          </button>
+          </form>
       </div>
     </div>
   </body>

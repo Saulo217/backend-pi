@@ -2,8 +2,9 @@
 require_once "../../connection.php";
 require_once "../../model/minhas_plantas.php";
 
-$pdo = NewConnection("PI");
-$pdo->query("USE PI;");
+$pdo = NewConnection("smart_eco");
+$pdo->query("USE smart_eco;");
 
 $plantas = new MinhasPlantas();
-$array = $plantas->read($pdo);
+$_POST["plantas"] = $array = $plantas->read($pdo);
+header("location: http://localhost/view/pages/home.php");

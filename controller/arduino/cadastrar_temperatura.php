@@ -9,8 +9,8 @@ $ErrorDataIsNull = 3;
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$pdo = NewConnection('PI');
-$pdo->query("USE PI;");
+$pdo = NewConnection('smart_eco');
+$pdo->query("USE smart_eco;");
 
 $temperatura = new Temperatura();
 $result = 0;

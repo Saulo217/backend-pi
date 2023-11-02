@@ -49,12 +49,12 @@ class Bugs
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO bugs(id_bug, descricao, data_contato, data_correcao) VALUES
-        (:id_bug, :descricao, :data_contato, :data_correcao)";
+        $sql = "INSERT INTO bugs(descricao, data_contato, data_correcao) VALUES
+        (:descricao, :data_contato, :data_correcao)";
 
         try {
             $sth = $pdo->prepare($sql);
-            $sth->bindValue(":id_bug", $this->getId_bug());
+
             $sth->bindValue(":descricao", $this->getDescricao());
             $sth->bindValue(":data_contato", $this->getData_contato());
             $sth->bindValue(":data_correcao", $this->getData_correcao());

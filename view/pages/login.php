@@ -15,7 +15,7 @@
     />
   </head>
   <body class="container">
-    <header><button onclick="goToPage('index')"><</button></header>
+    <header><button onclick="goToPage('index')"></button></header>
     <div class="main">
       <div class="section__info">
         <img src="../assets/app_icon.png" alt="app_logo" class="app__logo" />

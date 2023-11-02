@@ -83,6 +83,22 @@ class Umidade
         }
     }
 
+    public function readSingle(PDO $pdo): array
+    {
+        $sql = "SELECT * FROM umidade WHERE id_umidade = :id_umidade";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":id_umidade", $this->getIdUmidade());
+            $sth->execute();
+
+            return $sth->fetch(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM umidade WHERE id_umidade = :idUmidade";
