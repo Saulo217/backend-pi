@@ -82,7 +82,7 @@ class Usuario
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO Usuario(email, nome, data_nascimento, foto, senha, usuario, cargo) VALUES
+        $sql = "INSERT INTO usuario(email, nome, data_nascimento, foto, senha, usuario, cargo) VALUES
         (:email, :nome, :data_nascimento, :foto, :senha, :usuario, :cargo)";
 
         try {
