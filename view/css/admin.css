@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,6 +11,42 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
+}
+
+.option_container {
+  font-family: "Montserrat";
+  font-size: 18px;
+  text-decoration: none;
+  color: #225300; 
+  justify-content: space-evenly !important;
+}
+
+.option {
+  width: 75%;
+  height: 20%;
+  border-radius: 10px;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+
+.app {
+  background-image: url('../assets/flower.png');
+  background-size: cover;
+}
+
+.bugs {
+  background-image: url('../assets/code.png');
+  background-size: cover;
+}
+
+
+.option > a {
+  padding-left: 8px;
+  font-family: "Montserrat";
+  font-size: 32px;
+  text-decoration: none;
+  color: #ffffff; 
 }
 
 header {

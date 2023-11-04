@@ -15,7 +15,7 @@
     />
   </head>
   <body class="container">
-    <header><button onclick="goToAdmin('login')"><</button></header>
+    <header><button onclick="goToPage('admin_login')"><</button></header>
     <div class="main">
       <label for="upload" class="section__info">
         <img src="../assets/register_icon.png" aria-hidden="true" alt="app_logo" class="app__logo" />

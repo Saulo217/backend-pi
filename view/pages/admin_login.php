@@ -22,13 +22,12 @@
         <strong>Login</strong>
       </div>
       <form
-        action="http://localhost/backend-pi/controller/usuario/login.php"
+        action="http://localhost/backend-pi/controller/admin/login.php"
         method="post"
         class="form"
-        onsubmit="goToPage('home')"
       >
-        <input placeholder="Administrador" type="text" name="admin" id="" />
-        <input placeholder="Senha" type="password" name="adminPass" id="" />
+        <input placeholder="Administrador" type="text" name="admin" />
+        <input placeholder="Senha" type="password" name="adminPass" />
         <input type="submit" value="login" id="button" />
       </form>
       <div class="sigin__options">
