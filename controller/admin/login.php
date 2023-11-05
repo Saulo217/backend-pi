@@ -13,9 +13,11 @@ if (isset($_POST["admin"]) && isset($_POST["admPass"])) {
     $array = $admin->readSingleUser($pdo);
 
     if ($array["usuario"] == $admin->getUsuario() && $array["senha"] == $admin->getSenha()) {
+        echo "OK";
         setcookie("admin", $admin->getUsuario(), 0, "/");
         header("location: http://localhost/backend-pi/view/pages/admin_home.php");
     } else {
+        echo "Not OK";
         header("location: http://localhost/backend-pi/view/pages/admin_login.php");
     }
 }

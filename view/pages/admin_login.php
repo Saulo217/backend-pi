@@ -27,7 +27,7 @@
         class="form"
       >
         <input placeholder="Administrador" type="text" name="admin" />
-        <input placeholder="Senha" type="password" name="adminPass" />
+        <input placeholder="Senha" type="password" name="admPass" />
         <input type="submit" value="login" id="button" />
       </form>
       <div class="sigin__options">
