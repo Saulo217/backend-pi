@@ -125,6 +125,22 @@ class Usuario
             $sth = $pdo->prepare($sql);
             $sth->execute();
 
+            return $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
+    public function login(PDO $pdo)
+    {
+        $sql = "SELECT * FROM usuario WHERE usuario = :usuario AND senha = :senha";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':usuario', $this->getUsuario());
+            $sth->bindValue(':senha', $this->getSenha());
+            $sth->execute();
+
             return $sth->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();

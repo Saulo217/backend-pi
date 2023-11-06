@@ -56,8 +56,8 @@ for ($i = 0; $i < sizeof($array); $i++) {
     setcookie("id_planta", $array[$i]["id_planta"], 0, '/');
     $foto = $array[$i]['foto_planta'];
     $apelido = $array[$i]['apelido'];
-    $umidade = mb_strimwidth($array[$i]['umidade_ideal'], 0, 3, "");
-    $temperatura = mb_strimwidth($array[$i]['temperatura_ideal'], 0, 3, "");
+    $umidade = number_format((double) $array[$i]['umidade_ideal'], 1);
+    $temperatura = number_format((double) $array[$i]['temperatura_ideal'], 1);
     echo "
               <div class='plant__card' onclick='goToPage('details')'>
                 <img src='http://localhost/backend-pi/uploads/$foto' alt='' />
@@ -66,11 +66,11 @@ for ($i = 0; $i < sizeof($array); $i++) {
                   <div class='plant__info__details'>
                     <div>
                       <img src='../assets/umidade_icon.png' alt='' />
-                      <span>$umidade %</span>
+                      <span>" . $umidade . "%</span>
                     </div>
                     <div>
                       <img src='../assets/temp_icon.png' alt='' />
-                      <span>$temperatura °C</span>
+                      <span>" . $temperatura . "°C</span>
                     </div>
                     <span class='link'>ver mais</span>
                   </div>

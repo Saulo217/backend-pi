@@ -11,7 +11,7 @@ $usuario = new Usuario();
 if (isset($_POST['usuario']) && isset($_POST["senha"])) {
     $usuario->setUsuario($_POST["usuario"]);
     $usuario->setSenha($_POST["senha"]);
-    $array = $usuario->readSingleUser($pdo);
+    $array = $usuario->login($pdo);
     if ($array['usuario'] == $usuario->getUsuario() && $array['senha'] == $usuario->getSenha()) {
         setcookie("usuario", $usuario->getUsuario(), 0, '/');
         header("location: http://localhost/backend-pi/view/pages/home.php");
