@@ -60,7 +60,7 @@ for ($i = 0; $i < sizeof($array); $i++) {
     $temperatura = number_format((double) $array[$i]['temperatura_ideal'], 1);
     echo "
               <div class='plant__card' onclick='goToPage('details')'>
-                <img src='http://localhost/backend-pi/uploads/$foto' alt='' />
+                <img src='http://locahost/backend-pi/uploads/$foto' alt='' />
                 <div class='plant__info'>
                   <strong>$apelido</strong>
                   <div class='plant__info__details'>

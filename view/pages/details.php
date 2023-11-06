@@ -20,7 +20,7 @@
       <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
     </header>
     <div class="main">
-      <strong class="plant__name">Echeveria</strong>
+      <strong class="plant__name">Cattleya labiata</strong>
     </div>
     <div class="plant__status__cards__container">
       <div class="plant__status__card" style="background-color: #e3d6b3">
@@ -33,7 +33,7 @@
         <strong>28°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>18°c á 35ºc</p>
         </div>
       </div>
       <div class="plant__status__card" style="background-color: #7bc779">
@@ -43,10 +43,10 @@
           </div>
           <span>Umidade</span>
         </div>
-        <strong>25°c</strong>
+        <strong>50%</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>Por volta de 70%</p>
         </div>
       </div>
       <div class="plant__status__card" style="background-color: #f88e8e">
@@ -59,7 +59,7 @@
         <strong>13%</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>Por volta de 70%</p>
         </div>
       </div>
       <div class="plant__status__card" style="background-color: #7bc779">
@@ -72,7 +72,7 @@
         <strong>Ideal</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>Por volta de 50%</p>
         </div>
       </div>
     </div>
@@ -82,13 +82,13 @@
     <section class="help__section">
       <h3>Cuidados e Dicas</h3>
       <div class="help__balloon">
-        <span>Não deixar em contato direto ao sol, esta planta prefere contato indireto coma luz do sol</span>
+        <span>Uma dica para que você consiga fazer essa orquídea florescer é garantir uma boa luminosidade e uma umidade elevada.</span>
       </div>
       <div class="help__balloon">
-        <span>Esta planta gosta que o solo esteja sempre amudido para que la possa se desenovolver melhor</span>
+        <span>Como ela é acostumada com regiões mais quentes e normalmente fica no nordeste,é recomendada para pessoas que vivem em regiões parecidas com essas.</span>
       </div>
       <div class="help__balloon">
-        <span>Cascas de frutas são um bom adubo para esta planta, com certeza ela irá adorar!</span>
+        <span>Quanto ao seu perfume, ele é bem forte e agradável, sendo mais forte durante o período da manhã.</span>
       </div>
     </section>
   </body>
