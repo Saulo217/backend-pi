@@ -1,3 +1,13 @@
+<?php
+require_once "../../connection.php";
+require_once "../../model/plantas_ornamentais.php";
+
+$pdo = NewConnection("smart_eco");
+$pdo->query("USE smart_eco");
+
+$po = new PlantasOrnamentais();
+$array = $po->readMany($pdo);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,38 +34,19 @@
       <input type="text" class="search" />
     </div>
     <div class="plant__cards__container">
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Crossandra</span>
-        <img src="../assets/card_crossandra.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Echeveria</span>
-        <img src="../assets/card_echeveria.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Samambaia</span>
-        <img src="../assets/card_samambaia.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Onze-horas</span>
-        <img src="../assets/card_11-hora.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Crossandra</span>
-        <img src="../assets/card_crossandra.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Echeveria</span>
-        <img src="../assets/card_echeveria.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Samambaia</span>
-        <img src="../assets/card_samambaia.png" alt="" />
-      </div>
-      <div class="plant__card" style="background-color: #e3d6b3">
-        <span>Onze-horas</span>
-        <img src="../assets/card_11-hora.png" alt="" />
-      </div>
+      <?php
+for ($i = 0; $i < sizeof($array); $i++) {
+    $img = $array[$i]["foto_planta"];
+    $nome = $array[$i]["nome_popular"];
+    echo "
+            <div class='plant__card' style='background-color: #e3d6b3'>
+              <span>$nome</span>
+              <img src='http://localhost/backend-pi/uploads/cards/$img' alt='' />
+            </div>
+          ";
+}
+
+?>
     </div>
   </body>
 </html>
