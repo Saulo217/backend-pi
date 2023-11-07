@@ -143,10 +143,11 @@ class PlantasOrnamentais
 
     public function read(PDO $pdo)
     {
-        $sql = "SELECT * FROM PlantasOrnamentais";
+        $sql = "SELECT * FROM PlantasOrnamentais WHERE nome_cientifico = :nome_cientifico";
 
         try {
             $sth = $pdo->prepare($sql);
+            $sth->bindValue(":nome_cientifico", $this->getNome_cientifico());
             $sth->execute();
 
             $array = $sth->fetchAll(PDO::FETCH_ASSOC);
