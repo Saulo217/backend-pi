@@ -164,7 +164,7 @@ class PlantasOrnamentais
             $sth = $pdo->prepare($sql);
             $sth->execute();
 
-            return $sth->fetchAll(PDO::FETCH_BOTH);
+            return $sth->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }

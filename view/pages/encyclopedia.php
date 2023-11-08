@@ -1,12 +1,16 @@
 <?php
 require_once "../../connection.php";
 require_once "../../model/plantas_ornamentais.php";
+require_once "../../model/sort.php";
 
 $pdo = NewConnection("smart_eco");
 $pdo->query("USE smart_eco");
 
 $po = new PlantasOrnamentais();
 $array = $po->readMany($pdo);
+
+quick_sort($array, 0, sizeof($array) - 1);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +35,7 @@ $array = $po->readMany($pdo);
       <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
     </header>
     <div class="main">
-      <input type="text" class="search" />
+      <input type="search" class="search" />
     </div>
     <div class="plant__cards__container">
       <?php

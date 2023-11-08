@@ -5,10 +5,10 @@ function part(&$vetor, int $inicio, $fim)
     $pivo = $vetor[intval(($inicio + $fim) / 2)];
 
     while ($inicio < $fim) {
-        while ($inicio < $fim && $vetor[$inicio] <= $pivo) {
+        while ($inicio < $fim && array_values($vetor[$inicio])[1] <= $pivo) {
             $inicio++;
         }
-        while ($inicio < $fim && $vetor[$fim] >= $pivo) {
+        while ($inicio < $fim && array_values($vetor[$fim])[1] >= $pivo) {
             $fim--;
         }
         $auxiliar = $vetor[$inicio];
