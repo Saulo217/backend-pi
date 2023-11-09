@@ -61,13 +61,13 @@ $array = $plantas->read(
       <div class="plants__cards" onclick="goToPage('details')">
         <?php
 for ($i = 0; $i < sizeof($array); $i++) {
-    setcookie("id_planta", $array[$i]["id_planta"], 0, '/');
+    $id = $array[$i]["id_planta"];
     $foto = $array[$i]['foto_planta'];
     $apelido = $array[$i]['apelido'];
     $umidade = number_format((double) $array[$i]['umidade_ideal'], 1);
     $temperatura = number_format((double) $array[$i]['temperatura_ideal'], 1);
     echo "
-              <div class='plant__card' onclick='goToPage('details')'>
+              <div class='plant__card' onclick='goToPage('details', 'id=$id')'>
                 <img src='http://localhost/backend-pi/uploads/$foto' alt='' />
                 <div class='plant__info'>
                   <strong>$apelido</strong>

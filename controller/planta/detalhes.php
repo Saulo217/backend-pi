@@ -12,7 +12,7 @@ function detalhes()
     $pdo = NewConnection("smart_eco");
     $pdo->query("USE smart_eco");
 
-    $id = $_COOKIE["id_planta"];
+    $id = $_GET["id"];
 
     try {
         $sth = $pdo->prepare("SELECT * FROM
@@ -36,7 +36,7 @@ function dicas()
     $pdo = NewConnection("smart_eco");
     $pdo->query("USE smart_eco");
 
-    $id = $_COOKIE["id_planta"];
+    $id = $_GET["id"];
 
     try {
         $sth = $pdo->prepare("SELECT * FROM

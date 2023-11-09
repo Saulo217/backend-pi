@@ -41,7 +41,7 @@
         <input type="submit" value="Cadastrar" id="button" />
       </form>
     </div>
-    <footer>
+    <footer style="z-index: -2;">
       <img src="../assets/footer_background.png" alt="footer_background" />
     </footer>
   </body>
