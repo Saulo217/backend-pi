@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS smart_eco;
-
 CREATE DATABASE IF NOT EXISTS smart_eco;
 
 USE smart_eco;

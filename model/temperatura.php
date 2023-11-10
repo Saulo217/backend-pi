@@ -83,6 +83,22 @@ class Temperatura
         }
     }
 
+    public function readSingle(PDO $pdo)
+    {
+        $sql = "SELECT * FROM temperatura WHERE id_temperatura = :id_temperatura";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":id_temperatura", $this->getIdTemperatura());
+            $sth->execute();
+
+            return $sth->fetch(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM temperatura WHERE id_temperatura = :idTemperatura";

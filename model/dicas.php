@@ -71,12 +71,11 @@ class Dicas
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO dicas(id_dicas, titulo, subtitulo, corpo, imagens_icons, nome_cientifico) VALUES
-        (:idDicas, :titulo, :subtitulo, :corpo, :imagensIcons, :nomeCientifico)";
+        $sql = "INSERT INTO dicas(titulo, subtitulo, corpo, imagens_icons, nome_cientifico) VALUES
+        (:titulo, :subtitulo, :corpo, :imagensIcons, :nomeCientifico)";
 
         try {
             $sth = $pdo->prepare($sql);
-            $sth->bindValue(":idDicas", $this->getIdDicas());
             $sth->bindValue(":titulo", $this->getTitulo());
             $sth->bindValue(":subtitulo", $this->getSubtitulo());
             $sth->bindValue(":corpo", $this->getCorpo());
@@ -84,9 +83,7 @@ class Dicas
             $sth->bindValue(":nomeCientifico", $this->getNomeCientifico());
             $sth->execute();
 
-            $this->read($pdo);
 
-            echo "Dica Cadastrada <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }

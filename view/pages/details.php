@@ -1,3 +1,7 @@
+<?php
+require_once "../../controller/planta/detalhes.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,11 +20,12 @@
   </head>
   <body class="container">
     <header>
-      <button onclick="goToPage('home')"><</button>
-      <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
+        <button onclick="goToPage('home')"><</button>
+        <strong>SmartEco</strong>
+        <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
     </header>
     <div class="main">
-      <strong class="plant__name">Cattleya labiata</strong>
+      <strong class="plant__name"><?php echo $array["apelido"] ?></strong>
     </div>
     <div class="plant__status__cards__container">
       <div class="plant__status__card" style="background-color: #e3d6b3">
@@ -30,7 +35,7 @@
           </div>
           <span>Temperatura</span>
         </div>
-        <strong>28°c</strong>
+        <strong><?php echo $temperatura ?>°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>18°c á 35ºc</p>
@@ -43,7 +48,7 @@
           </div>
           <span>Umidade</span>
         </div>
-        <strong>50%</strong>
+        <strong><?php echo $umidade ?>°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>Por volta de 70%</p>
@@ -56,7 +61,7 @@
           </div>
           <span>Nível de água</span>
         </div>
-        <strong>13%</strong>
+        <strong><?php echo $nivel_agua ?>%</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>Por volta de 70%</p>
@@ -69,7 +74,7 @@
           </div>
           <span>Iluminação</span>
         </div>
-        <strong>Ideal</strong>
+        <strong><?php echo $iluminacao ?></strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
           <p>Por volta de 50%</p>
@@ -81,15 +86,15 @@
     </section>
     <section class="help__section">
       <h3>Cuidados e Dicas</h3>
-      <div class="help__balloon">
-        <span>Uma dica para que você consiga fazer essa orquídea florescer é garantir uma boa luminosidade e uma umidade elevada.</span>
-      </div>
-      <div class="help__balloon">
-        <span>Como ela é acostumada com regiões mais quentes e normalmente fica no nordeste,é recomendada para pessoas que vivem em regiões parecidas com essas.</span>
-      </div>
-      <div class="help__balloon">
-        <span>Quanto ao seu perfume, ele é bem forte e agradável, sendo mais forte durante o período da manhã.</span>
-      </div>
+      <?php
+for ($i = 0; $i < sizeof($array_dicas); $i++) {
+    echo "
+            <div class='help__balloon'>
+              <section>" . $array_dicas[$i]["corpo"] . "</section>
+            </div>
+          ";
+}
+?>
     </section>
   </body>
 </html>

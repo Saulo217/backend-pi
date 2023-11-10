@@ -34,6 +34,7 @@ header button {
 }
 
 .profile__logo {
+  width: 55px !important;
   height: 55px;
 }
 
@@ -48,8 +49,11 @@ header button {
 
 .search {
   width: 85%;
+  border: 3px solid rgb(114, 156, 84);
   border-radius: 20px;
   padding: 12px 15px;
+  outline: none;
+  font-size: 18px;
 }
 
 .plant__cards__container {
@@ -74,7 +78,6 @@ header button {
 .plant__card img {
   border-radius: 20px;
   object-fit: cover;
-  filter: brightness(0.7.);
 }
 
 .plant__card span {

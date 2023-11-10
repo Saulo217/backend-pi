@@ -1,9 +1,16 @@
 <?php
 require_once "../../connection.php";
 require_once "../../model/minhas_plantas.php";
+require_once "../../model/usuario.php";
 
 $pdo = NewConnection("smart_eco");
 $pdo->query("USE smart_eco;");
+
+$usuario = new Usuario();
+$usuario->setUsuario($_COOKIE["usuario"]);
+$array = $usuario->readSingleUser($pdo);
+
+$email = $array["email"];
 
 $plantas = new MinhasPlantas();
 $array = $plantas->read(
@@ -11,7 +18,8 @@ $array = $plantas->read(
     " SELECT *
     FROM minhas_plantas
     INNER JOIN
-    plantas_ornamentais ON minhas_plantas.nome_cientifico = plantas_ornamentais.nome_cientifico;"
+    plantas_ornamentais ON minhas_plantas.nome_cientifico = plantas_ornamentais.nome_cientifico
+    WHERE email_usuario = '" . $email . "';"
 );
 
 ?>
