@@ -141,7 +141,11 @@ class Usuario
             $sth->bindValue(':senha', $this->getSenha());
             $sth->execute();
 
-            return $sth->fetch(PDO::FETCH_ASSOC);
+            if ($sth->fetch(PDO::FETCH_ASSOC)) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }

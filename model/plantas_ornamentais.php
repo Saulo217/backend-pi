@@ -115,9 +115,30 @@ class PlantasOrnamentais
 
     public function create(PDO $pdo)
     {
-        $sql = "INSERT INTO  plantas_ornamentais(nome_cientifico, nome_popular, data_inicio_florescimento, data_fim_florescimento, idade_minima_florescimento, quantidade_agua_regacao, temperatura_ideal, umidade_ideal, iluminacao_ideal, foto_planta) VALUES
-        (:nome_cientifico, :nome_popular, :data_inicio_florescimento, :data_fim_florescimento, :idade_minima_florescimento, :quantidade_agua_regacao,
-         :temperatura_ideal, :umidade_ideal, :iluminação_ideal, :foto_planta)";
+        $sql = "INSERT INTO  plantas_ornamentais(
+            nome_cientifico,
+            nome_popular,
+            data_inicio_florescimento,
+            data_fim_florescimento,
+            idade_minima_florescimento,
+            quantidade_agua_regacao,
+            temperatura_ideal,
+            umidade_ideal,
+            iluminacao_ideal,
+            foto_planta
+        ) VALUES
+        (
+            :nome_cientifico,
+            :nome_popular,
+            :data_inicio_florescimento,
+            :data_fim_florescimento,
+            :idade_minima_florescimento,
+            :quantidade_agua_regacao,
+            :temperatura_ideal,
+            :umidade_ideal,
+            :iluminacao_ideal,
+            :foto_planta
+        )";
 
         try {
             $sth = $pdo->prepare($sql);
@@ -130,12 +151,9 @@ class PlantasOrnamentais
             $sth->bindValue(":temperatura_ideal", $this->getTemperatura_ideal());
             $sth->bindValue(":umidade_ideal", $this->getUmidade_ideal());
             $sth->bindValue(":iluminacao_ideal", $this->getIluminacao_ideal());
-            $sth->bindValue(":foto_planta", $this->getIluminacao_ideal());
+            $sth->bindValue(":foto_planta", $this->getFoto_planta());
             $sth->execute();
 
-            $this->read($pdo);
-
-            echo "Planta Ornamental Cadastrada <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
