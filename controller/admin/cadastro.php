@@ -4,27 +4,28 @@
 require_once "../../connection.php";
 require_once "../../model/usuario.php";
 
+$data = json_decode(file_get_contents("php://input"), true);
+
 $pdo = NewConnection('smart_eco');
 $pdo->query('USE smart_eco;');
 
 $usuario = new Usuario();
 $usuario->setCargo("ROLE_ADMINISTRADOR");
 
-if (isset($_POST['nome']) &&
-    isset($_POST["email"]) &&
-    isset($_POST["datanasc"]) &&
-    isset($_POST["usuario"]) &&
-    isset($_POST["senha"])
+if (isset($data['nome']) &&
+    isset($data["email"]) &&
+    isset($data["datanasc"]) &&
+    isset($data["usuario"]) &&
+    isset($data["senha"])
 ) {
-    $usuario->setNome($_POST["nome"]);
-    $usuario->setEmail($_POST["email"]);
-    $usuario->setData_nascimento($_POST["datanasc"]);
-    $usuario->setUsuario($_POST["usuario"]);
-    $usuario->setSenha($_POST["senha"]);
+    $usuario->setNome($data["nome"]);
+    $usuario->setEmail($data["email"]);
+    $usuario->setData_nascimento($data["datanasc"]);
+    $usuario->setUsuario($data["usuario"]);
+    $usuario->setSenha($data["senha"]);
     $usuario->create($pdo);
 
-    header("location: http://localhost/backend-pi/view/pages/admin_home.php");
-
+    echo json_encode(array("success" => true));
 } else {
-    header("location: http://localhost/backend-pi/view/pages/admin_cadastro.php");
+    echo json_encode(array("success" => false));
 }

@@ -3,20 +3,22 @@
 require_once "../../connection.php";
 require_once "../../model/usuario.php";
 
+$data = json_decode(file_get_contents("php://input"), true);
+
 $pdo = NewConnection('smart_eco');
 $pdo->query('USE smart_eco;');
 
 $usuario = new Usuario();
 
-if (isset($_POST['usuario']) && isset($_POST["senha"])) {
-    $usuario->setUsuario($_POST["usuario"]);
-    $usuario->setSenha($_POST["senha"]);
+if (isset($data['usuario']) && isset($data["senha"])) {
+    $usuario->setUsuario($data["usuario"]);
+    $usuario->setSenha($data["senha"]);
     $array = $usuario->login($pdo);
-    if ($array['usuario'] == $usuario->getUsuario() && $array['senha'] == $usuario->getSenha()) {
-        setcookie("usuario", $usuario->getUsuario(), 0, '/');
-        header("location: http://localhost/backend-pi/view/pages/home.php");
+    if ($array) {
+        echo json_encode(array("usuario" => $usuario->getUsuario(), "success" => true));
     } else {
-        header("location: http://localhost/backend-pi/view/pages/login.php");
+        echo json_encode(array("success" => false));
     }
-
+} else {
+    echo json_encode(array("success" => false));
 }

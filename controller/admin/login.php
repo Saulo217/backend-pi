@@ -2,22 +2,21 @@
 require_once "../../connection.php";
 require_once "../../model/usuario.php";
 
+$data = json_decode(file_get_contents("php://input"), true);
+
 $pdo = NewConnection("smart_eco");
 $pdo->query("USE smart_eco");
 
 $admin = new Usuario();
 
-if (isset($_POST["admin"]) && isset($_POST["admPass"])) {
-    $admin->setUsuario($_POST["admin"]);
-    $admin->setSenha($_POST["admPass"]);
-    $array = $admin->readSingleUser($pdo);
+if (isset($data["admin"]) && isset($data["admPass"])) {
+    $admin->setUsuario($data["admin"]);
+    $admin->setSenha($data["admPass"]);
+    $array = $admin->login($pdo);
 
-    if ($array["usuario"] == $admin->getUsuario() && $array["senha"] == $admin->getSenha()) {
-        echo "OK";
-        setcookie("admin", $admin->getUsuario(), 0, "/");
-        header("location: http://localhost/backend-pi/view/pages/admin_home.php");
+    if ($array) {
+        echo json_encode(array("admin" => $admin->getUsuario(), "success" => true));
     } else {
-        echo "Not OK";
-        header("location: http://localhost/backend-pi/view/pages/admin_login.php");
+        echo json_encode(array("success" => false));
     }
 }

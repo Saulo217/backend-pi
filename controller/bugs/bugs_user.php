@@ -2,18 +2,20 @@
 require_once "../../connection.php";
 require_once "../../model/bugs.php";
 
+$data = json_decode(file_get_contents("php://input"), true);
+
 $pdo = NewConnection('PI');
 $pdo->query('USE PI;');
 
 $bug = new Bugs();
 
-if (isset($_POST['bug'])) {
+if (isset($data['bug'])) {
 
-    $bug->setDescricao($_POST['bug']);
+    $bug->setDescricao($data['bug']);
     $bug->setData_contato(date("Y-m-d"));
     $bug->create($pdo);
 
-    header("location: http://localhost/backend-pi/view/pages/home.php");
+    echo json_encode(array("success" => true));
 } else {
-    header("location: http://localhost/backend-pi/view/pages/report.php");
+    echo json_encode(array("success" => false));
 }

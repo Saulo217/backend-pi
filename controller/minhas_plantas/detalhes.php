@@ -7,12 +7,12 @@ require_once "../../model/iluminacao.php";
 require_once "../../model/nivel_agua.php";
 require_once "../../model/temperatura.php";
 
-function detalhes()
+$data = json_decode(file_get_contents("php://input"), true);
+
+function detalhes($id)
 {
     $pdo = NewConnection("smart_eco");
     $pdo->query("USE smart_eco");
-
-    $id = $_COOKIE["id_planta"];
 
     try {
         $sth = $pdo->prepare("SELECT * FROM
@@ -31,15 +31,13 @@ function detalhes()
 
 }
 
-function dicas()
+function dicas($id)
 {
     $pdo = NewConnection("smart_eco");
     $pdo->query("USE smart_eco");
 
-    $id = $_COOKIE["id_planta"];
-
     try {
-        $sth = $pdo->prepare("SELECT * FROM
+        $sth = $pdo->prepare("SELECT corpo FROM
             dicas as d inner join plantas_ornamentais as po
             inner join minhas_plantas as mp on po.nome_cientifico = mp.nome_cientifico
             WHERE mp.id_planta = " . $id);
@@ -52,10 +50,13 @@ function dicas()
 
 }
 
-$array_dicas = dicas();
-$array = detalhes();
+$array_dicas = dicas($data["id_planta"]);
+$array = detalhes($data["id_planta"]);
 
-$temperatura = number_format((double) $array['temperatura'], 1);
-$umidade = number_format((double) $array['umidade'], 1);
-$nivel_agua = number_format((double) $array['nivel_agua'], 1);
-$iluminacao = number_format((double) $array['iluminacao'], 1);
+echo json_encode(array(
+    "temperatura" => number_format((double) $array['temperatura'], 1),
+    "umidade" => number_format((double) $array['umidade'], 1),
+    "nivel_agua" => number_format((double) $array['nivel_agua'], 1),
+    "iluminacao" => number_format((double) $array['iluminacao'], 1),
+    "dicas" => $array_dicas,
+));
