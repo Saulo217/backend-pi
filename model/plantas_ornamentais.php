@@ -188,6 +188,39 @@ class PlantasOrnamentais
         }
     }
 
+    public function update(PDO $pdo)
+    {
+        $sql = "UPDATE PlantasOrnamentais SET
+            nome_cientifico = :nome_cientifico,
+            nome_popular = :nome_popular,
+            data_inicio_florescimento = :data_inicio_florescimento,
+            data_fim_florescimento = :data_fim_florescimento,
+            idade_minima_florescimento = :idade_minima_florescimento,
+            quantidade_agua_regacao = :quantidade_agua_regacao,
+            temperatura_ideal = :temperatura_ideal,
+            umidade_ideal = :umidade_ideal,
+            iluminacao_ideal = :iluminacao_ideal,
+            foto_planta = :foto_planta
+            WHERE nome_cientifico = :nome_cientifico";
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":nome_cientifico", $this->getNome_cientifico());
+            $sth->bindValue(":nome_popular", $this->getNome_popular());
+            $sth->bindValue(":data_inicio_florescimento", $this->getData_inicio_florescimento());
+            $sth->bindValue(":data_fim_florescimento", $this->getData_fim_florescimento());
+            $sth->bindValue(":idade_minima_florescimento", $this->getIdade_minima_florescimento());
+            $sth->bindValue(":quantidade_agua_regacao", $this->getQuantidade_agua_regacao());
+            $sth->bindValue(":temperatura_ideal", $this->getTemperatura_ideal());
+            $sth->bindValue(":umidade_ideal", $this->getUmidade_ideal());
+            $sth->bindValue(":iluminacao_ideal", $this->getIluminacao_ideal());
+            $sth->bindValue(":foto_planta", $this->getFoto_planta());
+            $sth->execute();
+            echo "Deletado com successo <br>";
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function delete(PDO $pdo)
     {
         $sql = "DELETE FROM PlantasOrnamentais WHERE nome_popular = :nome_popular";
