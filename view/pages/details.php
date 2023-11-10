@@ -38,7 +38,7 @@ require_once "../../controller/planta/detalhes.php";
         <strong><?php echo $temperatura ?>°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>18°c á 35ºc</p>
         </div>
       </div>
       <div class="plant__status__card" style="background-color: #7bc779">
@@ -51,7 +51,7 @@ require_once "../../controller/planta/detalhes.php";
         <strong><?php echo $umidade ?>°c</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>Por volta de 70%</p>
         </div>
       </div>
       <div class="plant__status__card" style="background-color: #f88e8e">
@@ -64,7 +64,7 @@ require_once "../../controller/planta/detalhes.php";
         <strong><?php echo $nivel_agua ?>%</strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>Por volta de 70%</p>
         </div>
       </div>
       <div class="plant__status__card" style="background-color: #7bc779">
@@ -77,7 +77,7 @@ require_once "../../controller/planta/detalhes.php";
         <strong><?php echo $iluminacao ?></strong>
         <div class="plant__status__card__footer">
           <p>Recomendado</p>
-          <p>20°c á 30ºc</p>
+          <p>Por volta de 50%</p>
         </div>
       </div>
     </div>

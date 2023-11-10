@@ -31,8 +31,7 @@
         <input type="submit" value="login" id="button" />
       </form>
       <div class="sigin__options">
-        <p>Não Possuí Cadastro?</p>
-        <strong onclick="goToPage('admin_cadastro')">Registre-se</strong>
+
       </div>
     </div>
     <footer>

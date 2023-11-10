@@ -26,3 +26,11 @@ header > strong {
   margin-top: 10px;
   font-weight: 600;
 }
+
+.corpo{
+  font-family: 'Montserrat',sans-serif;
+  padding: .5rem;
+  outline: none;
+  border: solid 2px #225300;
+  border-radius: 10px;
+}

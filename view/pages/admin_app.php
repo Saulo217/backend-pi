@@ -14,18 +14,20 @@
     />
     <link rel="stylesheet" href="../css/admin.css">
   </head>
-  <body class="container">
-    <header>
-      <img src="../assets/app_icon.png" alt="app_logo" class="app__logo" />
-      <strong>SmartEco</strong>
-      <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
-    </header>
-    <div class="main">
-        <form class="form" style="height: 50%; flex: none;">
-            <input type="button" value="Espécies" id="button">
-            <input type="button" value="Dicas" id="button">
-        </form>
-
+  <body>
+  <div class="container option_container">
+        <h1>Funções</h1>
+        <div class="option especies">
+          <a href="http://localhost/backend-pi/view/pages/admin_app.php">
+           Espécies
+          </a>
+        </div>
+        <div class="option dicas">
+          <a href="http://localhost/backend-pi/view/pages/admin_dicas.php">
+          Dicas
+          </a>
+        </div>
+    </div>
     </div>
     <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
   </body>

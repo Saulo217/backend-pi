@@ -22,6 +22,7 @@
 }
 
 .option {
+  display:block;
   width: 75%;
   height: 20%;
   border-radius: 10px;
@@ -31,15 +32,33 @@
 }
 
 .app {
-  background-image: url('../assets/flower.png');
+  background-image: url('../assets/app.png');
   background-size: cover;
 }
 
 .bugs {
-  background-image: url('../assets/code.png');
+  background-image: url('../assets/bugs.png');
   background-size: cover;
 }
 
+ .especies{
+  background-image: url('../assets/especies.png');
+  background-size: cover;
+ }
+ 
+ .dicas{
+  background-image: url('../assets/dicas.png');
+  background-size: cover;
+ }
+
+ .dicas_cadastrar{
+  background-repeat: no-repeat;
+ }
+
+ .dicas_manipular{
+  
+  background-repeat: no-repeat;
+ }
 
 .option > a {
   padding-left: 8px;

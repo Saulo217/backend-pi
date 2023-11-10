@@ -23,6 +23,8 @@
       <div class="login__options__buttons">
         <button onclick="goToPage('login')">Entrar</button>
         <button onclick="goToPage('cadastro')">Registre-se</button>
+
+        <a href="http://localhost/backend-pi/view/pages/admin_login.php">DevMode
       </div>
     </div>
   </body>

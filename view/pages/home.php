@@ -80,15 +80,38 @@ $array = $plantas->read(
                   <div>
                     <img src="../assets/temp_icon.png" />
                     <span>" . $temperatura . "°C</span>
+      <div class="plants__cards" onclick="goToPage('details')">
+        <?php
+for ($i = 0; $i < sizeof($array); $i++) {
+    setcookie("id_planta", $array[$i]["id_planta"], 0, '/');
+    $foto = $array[$i]['foto_planta'];
+    $apelido = $array[$i]['apelido'];
+    $umidade = number_format((double) $array[$i]['umidade_ideal'], 1);
+    $temperatura = number_format((double) $array[$i]['temperatura_ideal'], 1);
+    echo "
+              <div class='plant__card' onclick='goToPage('details')'>
+                <img src='http://locahost/backend-pi/uploads/$foto' alt='' />
+                <div class='plant__info'>
+                  <strong>$apelido</strong>
+                  <div class='plant__info__details'>
+                    <div>
+                      <img src='../assets/umidade_icon.png' alt='' />
+                      <span>" . $umidade . "%</span>
+                    </div>
+                    <div>
+                      <img src='../assets/temp_icon.png' alt='' />
+                      <span>" . $temperatura . "°C</span>
+                    </div>
+                    <span class='link'>ver mais</span>
                   </div>
-                  <span class="link">ver mais</span>
+                  <span class=\"link\">ver mais</span>
                 </div>
               </div>
             </div>
           `);
         </script>
       </div>
-      <img onclick="goToPage('new_plant')"  src="../assets/add_icon.png" alt="" />
+      <img onclick=\"goToPage('new_plant')\"  src=\"../assets/add_icon.png\" alt=\"\" />
     </div>
     <div></div>
     <footer></footer>
