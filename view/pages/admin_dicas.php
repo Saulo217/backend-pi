@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="container option_container">
+<header><button onclick="goToPage('admin_app')"><</button></header>
         <h1>Dicas</h1>
         <div class="option dicas_cadastrar">
           <a href="http://localhost/backend-pi/view/pages/admin_cadastro_dicas.php">

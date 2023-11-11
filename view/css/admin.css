@@ -1,6 +1,10 @@
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Montserrat-Bold";
   src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
 
 .container {
@@ -147,9 +151,114 @@ footer {
   margin: 0%;
   height: 130px;
   width: 100%;
+  position: absolute;
+  bottom: -3rem;
 }
 
 footer img {
   height: 130px;
   width: 100%;
+}
+
+ .enviados_card{
+  height: 65px;
+  width: 310px;
+  border: #225300 solid 2px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0px;
+  position: relative;
+  top: -23rem;
+  row-gap: 20px;
+  font-family: "Montserrat-Regular";
+  font-size: 13px;
+  margin-bottom: 2rem;
+ }
+ .enviados_detalhes_card{
+  height: 200px;
+  width: 310px;
+  border: #225300 solid 2px;
+  border-radius: 8px;
+  display: flex;
+ 
+  padding: 2px 0px;
+  position: relative;
+  top: -23rem;
+  row-gap: 20px;
+  font-family: "Montserrat-Regular";
+  font-size: 13px;
+  margin-bottom: 2rem;
+ }
+
+ .app__logo{
+  margin-top: -14rem;
+ }
+
+ .app__naolido{
+  margin-left: -14rem;
+  position: relative;
+  top: -25rem;
+ }
+
+ .ti1{
+  color: #225300;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-top: 7px;
+  margin-bottom: 1.5rem;
+ }
+
+ .ti2{
+  margin-left: 0.5rem;
+  margin-top: -36px;
+  margin-bottom: 1.5rem;
+ }
+ 
+
+
+ .container-body{
+  /* background-color: red; */
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4%;
+
+ }
+ .title-page{
+  display: flex;
+  justify-content: center;
+  color: #225300;
+  font-family: 'Montserrat-Regular';
+  font-weight: bold;
+  & > p{
+    margin: 0;
+    font-size: 1.75rem;
+    font-family: 'Montserrat-Bold';
+  }
+ }
+ .container-descricao{
+  border: 2px solid #225300;
+  border-radius: 7px; /*mudar*/
+  padding: 1% 3%;
+  height: 200px;
+  font-family: 'Montserrat-Regular';
+  .descricao{
+    color: #000;
+    font-family: 'Montserrat-Regular';
+  }
+ }
+ .btn-resolvido{
+  width: 85%;
+  font-size: 1.125rem;
+  font-family: 'Montserrat-Regular';
+  background-color: #225300;
+color: #fff;
+/* font-weight: 700; */
+border: none;
+height: 35px;
+border-radius: 10px;
 }
