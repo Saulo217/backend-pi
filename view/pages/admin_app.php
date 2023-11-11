@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/index.css" />
-    <script src="../js/main.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/admin.css">
-  </head>
-  <body>
-  <div class="container option_container">
-        <h1>Funções</h1>
-        <div class="option especies">
-          <a href="http://localhost/backend-pi/view/pages/admin_app.php">
-           Espécies
-          </a>
-        </div>
-        <div class="option dicas">
-          <a href="http://localhost/backend-pi/view/pages/admin_dicas.php">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dicas</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+</head>
+<body>
+  <div class="wrapper_dicas">
+    <h1>Dicas</h1>
+    <div class="container" style="justify-content: space-evenly;">
+        <a href="http://localhost/backend-pi/view/pages/admin_cadastro_dicas.php" style="padding-left: 55px; padding-right: 55px;" class="link_button">
+          App
+        </a>
+        <p>ou</p>
+        <a href="http://localhost/backend-pi/view/pages/admin_dicas.php" class="link_button">
           Dicas
-          </a>
-        </div>
+        </a>
     </div>
-    </div>
-    <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
-  </body>
+    <footer>
+      <img src="../assets/footer_background.png" alt="footer_background" />
+    </footer>
+  </div>
+</body>
 </html>
