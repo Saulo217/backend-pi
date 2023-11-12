@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/login.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,14 +23,11 @@
         <strong>Login</strong>
       </div>
       <form
-        action="http://localhost/backend-pi/controller/usuario/login.php"
-        method="post"
         class="form"
-        onsubmit="goToPage('home')"
       >
-        <input placeholder="Usuário" type="text" name="usuario" id="" />
-        <input placeholder="Senha" type="text" name="senha" id="" />
-        <input type="submit" value="login" id="button" />
+        <input placeholder="Usuário" type="text" name="usuario" id="usuario" />
+        <input placeholder="Senha" type="text" name="senha" id="senha" />
+        <input type="button" value="login" id="button" onclick="loginHandler()" />
       </form>
       <div class="sigin__options">
         <p>Não Possuí Cadastro?</p>

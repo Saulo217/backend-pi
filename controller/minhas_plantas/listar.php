@@ -25,4 +25,4 @@ $array = $plantas->read(
     WHERE email_usuario = '" . $email . "';"
 );
 
-echo json_encode($array);
+echo json_encode(array("success" => true, "result" => $array));

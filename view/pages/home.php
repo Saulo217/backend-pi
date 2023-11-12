@@ -1,28 +1,3 @@
-<?php
-require_once "../../connection.php";
-require_once "../../model/minhas_plantas.php";
-require_once "../../model/usuario.php";
-
-$pdo = NewConnection("smart_eco");
-$pdo->query("USE smart_eco;");
-
-$usuario = new Usuario();
-$usuario->setUsuario($_COOKIE["usuario"]);
-$array = $usuario->readSingleUser($pdo);
-
-$email = $array["email"];
-
-$plantas = new MinhasPlantas();
-$array = $plantas->read(
-    $pdo,
-    " SELECT *
-    FROM minhas_plantas
-    INNER JOIN
-    plantas_ornamentais ON minhas_plantas.nome_cientifico = plantas_ornamentais.nome_cientifico
-    WHERE email_usuario = '" . $email . "';"
-);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,61 +34,43 @@ $array = $plantas->read(
         </button>
       </div>
       <div class="plants__cards">
-        <script>
-          async function getMyPlants() {
-            const response = await fetch("http://localhost/controller/plant/listar.php",
-            {
-              method: "POST",
-              body: JSON.stringify({usuario})
-            });
+      <script>
+        (async () => {
+          usuario = sessionStorage.getItem("usuario");
+          const json = await post(myplants + "listar.php", { usuario });
+          if(json.success) {
+            for (let element of json.result) {
+              for(let el of element) {
+                document.write(`
+                  <div class='plant__card' onclick="goToPage('details')">
+                    <img src='http://locahost/backend-pi/uploads/$foto' alt='' />
+                    <div class='plant__info'>
+                      <strong>${el.apelido}</strong>
+                      <div class='plant__info__details'>
+                        <div>
+                          <img src='../assets/umidade_icon.png' alt='' />
+                          <span>${el.umidade} %</span>
+                        </div>
+                        <div>
+                          <img src='../assets/temp_icon.png' alt='' />
+                          <span>${el.temperatura} °C</span>
+                        </div>
+                        <span class='link'>ver mais</span>
+                      </div>
+                      <span class="link">ver mais</span>
+                    </div>
+                  </div>
+                `);
+              }
+            }
+          } else {
+            goToPage("login");
           }
-          document.write(`
-            <div class="plant__card" onclick="detalhes({'id': $id})">
-              <img src="http://localhost/backend-pi/uploads/$foto" />
-              <div class="plant__info">
-                <strong>$apelido</strong>
-                <div class="plant__info__details">
-                  <div>
-                    <img src="../assets/umidade_icon.png" />
-                    <span>" . $umidade . "%</span>
-                  </div>
-                  <div>
-                    <img src="../assets/temp_icon.png" />
-                    <span>" . $temperatura . "°C</span>
-      <div class="plants__cards" onclick="goToPage('details')">
-        <?php
-for ($i = 0; $i < sizeof($array); $i++) {
-    setcookie("id_planta", $array[$i]["id_planta"], 0, '/');
-    $foto = $array[$i]['foto_planta'];
-    $apelido = $array[$i]['apelido'];
-    $umidade = number_format((double) $array[$i]['umidade_ideal'], 1);
-    $temperatura = number_format((double) $array[$i]['temperatura_ideal'], 1);
-    echo "
-              <div class='plant__card' onclick='goToPage('details')'>
-                <img src='http://locahost/backend-pi/uploads/$foto' alt='' />
-                <div class='plant__info'>
-                  <strong>$apelido</strong>
-                  <div class='plant__info__details'>
-                    <div>
-                      <img src='../assets/umidade_icon.png' alt='' />
-                      <span>" . $umidade . "%</span>
-                    </div>
-                    <div>
-                      <img src='../assets/temp_icon.png' alt='' />
-                      <span>" . $temperatura . "°C</span>
-                    </div>
-                    <span class='link'>ver mais</span>
-                  </div>
-                  <span class=\"link\">ver mais</span>
-                </div>
-              </div>
-            </div>
-          `);
-        </script>
+        })();
+      </script>
+      <img onclick="goToPage('new_plant')"  src="../assets/add_icon.png" alt="" />
       </div>
-      <img onclick=\"goToPage('new_plant')\"  src=\"../assets/add_icon.png\" alt=\"\" />
     </div>
-    <div></div>
     <footer></footer>
   </body>
 </html>

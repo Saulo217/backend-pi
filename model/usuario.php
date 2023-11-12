@@ -96,7 +96,6 @@ class Usuario
             $sth->bindValue(":cargo", $this->getCargo());
             $sth->execute();
 
-            echo "Usuario Cadastrado <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
@@ -139,9 +138,8 @@ class Usuario
             $sth = $pdo->prepare($sql);
             $sth->bindValue(':usuario', $this->getUsuario());
             $sth->bindValue(':senha', $this->getSenha());
-            $sth->execute();
-
-            if ($sth->fetch(PDO::FETCH_ASSOC)) {
+            
+            if ($sth->execute()) {
                 return true;
             } else {
                 return false;

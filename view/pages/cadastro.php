@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,14 +23,14 @@
         <input placeholder="" type="file" name="foto" id="upload" style="display: none;" />
         <strong>Cadastro</strong>
       </label>
-      <form action="http://localhost/backend-pi/controller/usuario/cadastro.php" class="form" method="post">
-        <input placeholder="Nome" type="text" name="nome" id="" />
-        <input placeholder="E-mail" type="text" name="email" id="" />
-        <input placeholder="Data de Nascimento" type="datetime-local" name="datanasc" id="" />
-        <input placeholder="Usuario" type="text" name="usuario" id="" />
-        <input placeholder="Senha" type="text" name="senha" id="" />
+      <form class="form">
+        <input placeholder="Nome" type="text" name="nome" id="nome" />
+        <input placeholder="E-mail" type="text" name="email" id="email" />
+        <input placeholder="Data de Nascimento" type="datetime-local" name="datanasc" id="datanasc" />
+        <input placeholder="Usuario" type="text" name="usuario" id="usuario" />
+        <input placeholder="Senha" type="text" name="senha" id="senha" />
         
-        <input type="submit" value="Concluir" id="button">
+        <input type="button" value="Concluir" id="button" onclick="cadastroHandler()">
       </form>
     </div>
     <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
