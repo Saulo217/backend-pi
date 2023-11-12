@@ -1,21 +1,3 @@
-<?php
-
-require_once "../../connection.php";
-require_once "../../model/usuario.php";
-
-$pdo = NewConnection('smart_eco');
-$pdo->query('USE smart_eco;');
-
-$usuario = new Usuario();
-if (!isset($_COOKIE['usuario'])) {
-    echo "nao existe usuario";
-} else {
-    $usuario->setUsuario($_COOKIE['usuario']);
-    $array = $usuario->readSingleUser($pdo);
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,19 +13,37 @@ if (!isset($_COOKIE['usuario'])) {
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
-  </head>
+    <script>
+    async function getUserData() {
+      usuario = sessionStorage.getItem("usuario");
+      const json = await post(user + "profiles.php", { usuario });
+  
+      if(json.success) {
+        return json.result;
+      } else {
+       alert("Error ao consultar usuario");
+      }
+}
+ data = await getUserData();
+</script>
+  
+</head>
   <body class="container">
     <header>
-      <button onclick="goToPage('home')"></button>
+      <button onclick="goToPage('home')"><</button>
       <strong>Perfil</strong>
       <div></div>
     </header>
     <div class="main">
       <div class="profile__info">
         <img src="../assets/img_profile.png" alt="app_logo" class="app__logo" />
-        <strong><?php echo $array['usuario'] ?></strong>
-        <p><?php echo $array['email'] ?></p>
-      </div>
+        <script>
+    document.write(`
+        <strong>${data.usuario}</strong>
+        <p>${data.email}</p>
+    `);
+</script>
+      </div>  
       <button class="button__edit">Editar Perfil</button>
       <div class="accordions">
         <details>
