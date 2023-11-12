@@ -43,7 +43,7 @@
               for(let el of element) {
                 document.write(`
                   <div class='plant__card' onclick="goToPage('details')">
-                    <img src='http://locahost/backend-pi/uploads/$foto' alt='' />
+                    <img src='http://locahost/backend-pi/uploads/el.foto' alt='' />
                     <div class='plant__info'>
                       <strong>${el.apelido}</strong>
                       <div class='plant__info__details'>
@@ -68,7 +68,7 @@
           }
         })();
       </script>
-      <img onclick="goToPage('new_plant')"  src="../assets/add_icon.png" alt="" />
+      <img onclick="goToPage('new_plant')" class="new_plant"  src="../assets/add_icon.png" alt="" />
       </div>
     </div>
     <footer></footer>

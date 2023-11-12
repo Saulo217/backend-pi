@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -37,7 +36,6 @@ header > strong {
   height: 60%;
   width: 58% !important;
   z-index: 1;
-  margin-top: -50%;
   width: 100% !important;
 }
 
@@ -64,9 +62,14 @@ header > strong {
   width: 35px;
 }
 
+.new_plant {
+  width: 65px;
+}
+
 .plants__cards {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 90%;
   margin-top: 50px;
   padding: 2px 0px;
