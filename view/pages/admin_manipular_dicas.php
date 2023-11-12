@@ -18,9 +18,9 @@
     <header><button onclick="goToPage('admin_dicas')"><</button></header>
     <div class="main">
       <label for="upload" class="section__info">
-        <img src="../assets/cadastro_dicas.png" aria-hidden="true" alt="app_logo" class="app__logo" />
+        <img src="../assets/atualizar_dicas.png" aria-hidden="true" alt="app_logo"/>
         <input placeholder="" type="file" name="foto" id="upload" style="display: none;" />
-        <strong style="color: #225300;">Atualizar</strong>
+        <strong style="color: #225300; font-size: 25px;">Atualizar</strong><br>
       </label>
       <form action="http://localhost/backend-pi/controller/usuario/cadastro.php" class="form" method="post">
         <input placeholder="Titulo" type="text" name="titulo" id="" />
