@@ -76,7 +76,7 @@ CREATE TABLE
         nome_cientifico VARCHAR(200) PRIMARY KEY,
         nome_popular VARCHAR(100),
         data_inicio_florescimento DATE,
-        data_fim_flroescimento DATE,
+        data_fim_florescimento DATE,
         idade_minima_florescimento INT (5),
         quantidade_agua_regacao DECIMAL(10, 5),
         temperatura_ideal DECIMAL(10, 5),
