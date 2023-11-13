@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/login.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/adminHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,13 +23,11 @@
         <strong>Login</strong>
       </div>
       <form
-        action="http://localhost/backend-pi/controller/admin/login.php"
-        method="post"
         class="form"
       >
-        <input placeholder="Administrador" type="text" name="admin" />
-        <input placeholder="Senha" type="password" name="admPass" />
-        <input type="submit" value="login" id="button" />
+        <input placeholder="Administrador" type="text" id="admin" />
+        <input placeholder="Senha" type="password" id="admPass" />
+        <input type="button" value="login" id="button" onclick="login()" />
       </form>
       <div class="sigin__options">
 
