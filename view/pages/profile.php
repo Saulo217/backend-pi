@@ -38,7 +38,7 @@
             }
           })();
         </script>
-      </div>  
+      </div>
       <button class="button__edit">Editar Perfil</button>
       <div class="accordions">
         <details>
@@ -67,10 +67,6 @@
         <details>
           <summary>Vaso</summary>
           <span>..</span>
-        </details>
-        <details>
-          <summary>Recibos</summary>
-          <span>...</span>
         </details>
         <details>
           <summary>Configurações</summary>
