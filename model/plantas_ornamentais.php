@@ -190,7 +190,7 @@ class PlantasOrnamentais
 
     public function update(PDO $pdo)
     {
-        $sql = "UPDATE PlantasOrnamentais SET
+        $sql = "UPDATE plantas_ornamentais SET
             nome_cientifico = :nome_cientifico,
             nome_popular = :nome_popular,
             data_inicio_florescimento = :data_inicio_florescimento,
@@ -215,7 +215,6 @@ class PlantasOrnamentais
             $sth->bindValue(":iluminacao_ideal", $this->getIluminacao_ideal());
             $sth->bindValue(":foto_planta", $this->getFoto_planta());
             $sth->execute();
-            echo "Deletado com successo <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
@@ -223,7 +222,7 @@ class PlantasOrnamentais
 
     public function delete(PDO $pdo)
     {
-        $sql = "DELETE FROM PlantasOrnamentais WHERE nome_popular = :nome_popular";
+        $sql = "DELETE FROM Plantas_ornamentais WHERE nome_popular = :nome_popular";
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":nome_popular", $this->getNome_popular());
