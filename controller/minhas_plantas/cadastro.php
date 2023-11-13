@@ -18,7 +18,7 @@ if (isset($data["apelido"]) &&
     isset($data["nomeCientifico"]) &&
     isset($data["dtInicio"]) &&
     isset($data["cor"]) &&
-    isset($data["email"])
+    isset($user_data["email"])
 ) {
     $plantas->setApelido($data["apelido"]);
     $plantas->setNome_cientifico($data["nomeCientifico"]);

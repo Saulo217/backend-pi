@@ -83,7 +83,6 @@ class MinhasPlantas
             $sth->bindValue(":nome_cientifico", $this->getNome_cientifico());
             $sth->execute();
 
-            echo "Minhas Plantas Cadastradas <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }
@@ -110,7 +109,6 @@ class MinhasPlantas
             $sth = $pdo->prepare($sql);
             $sth->bindValue(":id_planta", $this->getId_planta());
             $sth->execute();
-            echo "Deletado com successo <br>";
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
         }

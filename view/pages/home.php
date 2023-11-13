@@ -39,27 +39,28 @@
           usuario = sessionStorage.getItem("usuario");
           const json = await post(myplants + "listar.php", { usuario });
           if(json.success) {
-            for (let element of json.result) {
-              document.write(`
+            console.log(json.result);
+            for (let i = 0; i < json.result.length; i++) {
+              document.querySelector("div.plants__cards").innerHTML = `
                 <div class='plant__card' onclick="goToPage('details')">
-                  <img src='http://locahost/backend-pi/uploads/el.foto' alt='' />
+                  <img src='http://locahost/backend-pi/uploads/${json.result[i].foto_planta}' alt='' />
                   <div class='plant__info'>
-                    <strong>${el.apelido}</strong>
+                    <strong>${json.result[i].apelido}</strong>
                     <div class='plant__info__details'>
                       <div>
                         <img src='../assets/umidade_icon.png' alt='' />
-                        <span>${el.umidade} %</span>
+                        <span>${json.result[i].umidade_ideal.substring(0, 5)} %</span>
                       </div>
                       <div>
                         <img src='../assets/temp_icon.png' alt='' />
-                        <span>${el.temperatura} °C</span>
+                        <span>${json.result[i].temperatura_ideal.substring(0, 5)} °C</span>
                       </div>
                       <span class='link'>ver mais</span>
                     </div>
                     <span class="link">ver mais</span>
                   </div>
                 </div>
-              `);
+              `;
             }
           } else {
             goToPage("login");
