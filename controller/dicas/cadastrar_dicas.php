@@ -8,11 +8,11 @@ $pdo->query("USE smart_eco;");
 
 $dicas = new dicas();
 
-if (isset($data["titulo"]) && isset($data["subtitulo"]) && isset($data["corpo"]) && isset($data["nome_cientifico"])) {
+if (isset($data["titulo"]) && isset($data["subtitulo"]) && isset($data["corpo"]) && isset($data["nomeCientifico"])) {
     $dicas->setTitulo($data["titulo"]);
     $dicas->setSubtitulo($data["subtitulo"]);
     $dicas->setCorpo($data["corpo"]);
-    $dicas->setNomeCientifico($data["nome_cientifico"]);
+    $dicas->setNomeCientifico($data["nomeCientifico"]);
     $dicas->create($pdo);
     echo json_encode(array("success" => true));
 } else {

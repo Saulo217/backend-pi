@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/plantsHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,12 +23,12 @@
         <input placeholder="" type="file" name="foto" id="upload" style="display: none;" />
         <strong style="color: #225300;">Nova Dica</strong>
       </label>
-      <form action="http://localhost/backend-pi/controller/usuario/cadastro.php" class="form" method="post">
-        <input placeholder="Nome  Cientifico" type="text" name="nome_cientifico" id="" />
-        <input placeholder="Titulo" type="text" name="titulo" id="" />
-        <input placeholder="Subtitulo" type="text" name="subtitulo" id="" />
-        <textarea name="corpo" class="corpo" placeholder="Corpo" cols="10" rows="10"></textarea>
-        <input type="submit" value="Concluir" id="button">
+      <form class="form" >
+        <input placeholder="Nome  Cientifico" type="text" id="nome_cientifico" />
+        <input placeholder="Titulo" type="text" id="titulo" />
+        <input placeholder="Subtitulo" type="text" id="subtitulo" />
+        <textarea name="corpo" class="corpo" placeholder="Corpo" cols="10" rows="10" id="corpo"></textarea>
+        <input type="buttton" onclick="cadastro()" value="Concluir" id="button">
       </form>
     </div>
     <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>

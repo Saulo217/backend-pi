@@ -9,27 +9,27 @@ $pdo->query("USE smart_eco");
 
 $planta = new PlantasOrnamentais();
 
-if (isset($data["nome_cientifico"]) &&
-    isset($data["nome_popular"]) &&
-    isset($data["data_inicio_florescimento"]) &&
-    isset($data["data_fim_florescimento"]) &&
-    isset($data["idade_minima_florescimento"]) &&
-    isset($data["quantidade_agua_regacao"]) &&
-    isset($data["temperatura_ideal"]) &&
-    isset($data["umidade_ideal"]) &&
-    isset($data["iluminacao_ideal"]) &&
-    isset($data["foto_planta"])
+if (isset($data["nomeCientifico"]) &&
+    isset($data["nomePopular"]) &&
+    isset($data["dataInicioFlorescimento"]) &&
+    isset($data["dataFimFlorescimento"]) &&
+    isset($data["idadeMinimaFlorescimento"]) &&
+    isset($data["qtdAguaRegacao"]) &&
+    isset($data["temperaturaIdeal"]) &&
+    isset($data["umidadeIdeal"]) &&
+    isset($data["iluminacaoIdeal"]) &&
+    isset($data["fotoPlanta"])
 ) {
-    $planta->setNome_cientifico($data["nome_cientifico"]);
-    $planta->setNomePopular($data["nome_popular"]);
-    $planta->setData_inicio_florescimento($data["data_inicio_florescimento"]);
-    $planta->setData_fim_florescimento($data["data_fim_florescimento"]);
-    $planta->setIdade_minima_florescimento($data["idade_minima_florescimento"]);
-    $planta->setQuantidade_agua_regacao($data["quantidade_agua_regacao"]);
-    $planta->setTemperatura_ideal($data["temperatura_ideal"]);
-    $planta->setUmidade_ideal($data["umidade_ideal"]);
-    $planta->setIluminacao_ideal($data["iluminacao_ideal"]);
-    $planta->setFoto_planta($data["foto_planta"]);
+    $planta->setNome_cientifico($data["nomeCientifico"]);
+    $planta->setNomePopular($data["nomePopular"]);
+    $planta->setData_inicio_florescimento($data["dataInicioFlorescimento"]);
+    $planta->setData_fim_florescimento($data["dataFimFlorescimento"]);
+    $planta->setIdade_minima_florescimento($data["idadeMinimaFlorescimento"]);
+    $planta->setQuantidade_agua_regacao($data["qtdAguaRegacao"]);
+    $planta->setTemperatura_ideal($data["temperaturaIdeal"]);
+    $planta->setUmidade_ideal($data["umidadeIdeal"]);
+    $planta->setIluminacao_ideal($data["iluminacaoIdeal"]);
+    $planta->setFoto_planta($data["fotoPlanta"]);
     $planta->create($pdo);
 
     echo json_encode(array("success" => true));
