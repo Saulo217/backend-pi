@@ -40,28 +40,26 @@
           const json = await post(myplants + "listar.php", { usuario });
           if(json.success) {
             for (let element of json.result) {
-              for(let el of element) {
-                document.write(`
-                  <div class='plant__card' onclick="goToPage('details')">
-                    <img src='http://locahost/backend-pi/uploads/el.foto' alt='' />
-                    <div class='plant__info'>
-                      <strong>${el.apelido}</strong>
-                      <div class='plant__info__details'>
-                        <div>
-                          <img src='../assets/umidade_icon.png' alt='' />
-                          <span>${el.umidade} %</span>
-                        </div>
-                        <div>
-                          <img src='../assets/temp_icon.png' alt='' />
-                          <span>${el.temperatura} °C</span>
-                        </div>
-                        <span class='link'>ver mais</span>
+              document.write(`
+                <div class='plant__card' onclick="goToPage('details')">
+                  <img src='http://locahost/backend-pi/uploads/el.foto' alt='' />
+                  <div class='plant__info'>
+                    <strong>${el.apelido}</strong>
+                    <div class='plant__info__details'>
+                      <div>
+                        <img src='../assets/umidade_icon.png' alt='' />
+                        <span>${el.umidade} %</span>
                       </div>
-                      <span class="link">ver mais</span>
+                      <div>
+                        <img src='../assets/temp_icon.png' alt='' />
+                        <span>${el.temperatura} °C</span>
+                      </div>
+                      <span class='link'>ver mais</span>
                     </div>
+                    <span class="link">ver mais</span>
                   </div>
-                `);
-              }
+                </div>
+              `);
             }
           } else {
             goToPage("login");

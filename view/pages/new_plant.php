@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/new_plant.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,11 +25,7 @@
       <div class="section__info">
         <img src="../assets/plant_icon.png" alt="app_logo" class="app__logo" />
       </div>
-      <form
-        action="http://localhost/backend-pi/controller/planta/cadastro.php"
-        method="post"
-        class="form"
-      >
+      <form class="form">
         <label for="nomeCientifico">Espécie</label>
         <input name="nomeCientifico" type="text" id="nomeCientifico" />
         <label for="apelido">Nome Carinhoso</label>
@@ -38,7 +35,7 @@
         <label for="cor">Cor:</label>
         <input type="color" name="cor" value="#86A789" id="cor" />
         <br />
-        <input type="submit" value="Cadastrar" id="button" />
+        <input type="button" value="Cadastrar" id="button" onclick="newPlantHandler()" />
       </form>
     </div>
     <footer>

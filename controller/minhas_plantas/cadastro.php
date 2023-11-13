@@ -8,6 +8,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 $pdo = NewConnection("smart_eco");
 $pdo->query("USE smart_eco;");
 
+$usuario = new Usuario();
+$usuario->setUsuario($data["usuario"]);
+$user_data = $usuario->readSingleUser($pdo);
+
 $plantas = new MinhasPlantas();
 
 if (isset($data["apelido"]) &&
@@ -20,9 +24,11 @@ if (isset($data["apelido"]) &&
     $plantas->setNome_cientifico($data["nomeCientifico"]);
     $plantas->setData_nascimento($data["dtInicio"]);
     $plantas->setCor($data["cor"]);
-    $plantas->setEmail_usuario($data["email"]);
+    $plantas->setEmail_usuario($user_data["email"]);
     $plantas->create($pdo);
+    
+    echo json_encode(array("success" => true));
 
 } else {
-    header("location: ../../view/pages/home.php");
+  echo json_encode(array("success" => false));
 }
