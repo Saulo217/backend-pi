@@ -30,7 +30,7 @@ if (isset($data["nome_cientifico"]) &&
     $planta->setUmidade_ideal($data["umidade_ideal"]);
     $planta->setIluminacao_ideal($data["iluminacao_ideal"]);
     $planta->setFoto_planta($data["foto_planta"]);
-    $planta->create($pdo);
+    $planta->update($pdo);
 
     echo json_encode(array("success" => true));
 } else {

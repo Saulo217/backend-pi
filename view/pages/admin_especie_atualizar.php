@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/especieHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,21 +19,26 @@
   <body class="container">
     <header><button onclick="goToPage('login')"><</button></header>
     <div class="main">
-      <label for="upload" class="section__info">
+      <label for="foto_planta" class="section__info">
         <img src="../assets/flower_ellipse.png" aria-hidden="true" alt="app_logo" class="app__logo" />
-        <input placeholder="" type="file" name="foto" id="upload" style="display: none;" />
+        <input placeholder="" type="file" name="foto" id="foto_planta" style="display: none;" />
         <strong style="font-family: 'Montserrat-Bold'; font-size: 24px; color: #225300;">
             Atualizar
         </strong>
       </label>
-      <form action="http://localhost/backend-pi/controller/usuario/cadastro.php" class="form" method="post">
-        <input placeholder="Nome Cientifico" type="text" name="nome_cientifico" id="" />
-        <input placeholder="Nome Popular" type="text" name="nome_popular" id="" />
-        <input placeholder="Data Inicio Florescimento" type="datetime-local" name="data_inicio_florescimento" id="" />
-        <input placeholder="Data Fim Florescimento" type="datetime-local" name="data_fim_florescimento" id="" />
-        <input placeholder="Idade Minima Florescimento" type="text" name="idade_minima_florescimento" id="" />
-        <input placeholder="Quantidade De Agua(Irrigação)" type="text" name="quantidade_agua_irrigacao" id="" />
-        <input type="submit" value="Concluir" id="button">
+      <form class="form">
+        <input placeholder="Nome Cientifico" type="text" id="nome_cientifico" />
+        <input placeholder="Nome Popular" type="text" id="nome_popular" />
+        <input placeholder="Data Inicio Florescimento" type="datetime-local" id="data_inicio_florescimento" id="" />
+        <input placeholder="Data Fim Florescimento" type="datetime-local" id="data_fim_florescimento" id="" />
+        <input placeholder="Idade Minima Florescimento" type="text" id="idade_minima_florescimento" id="" />
+        <input placeholder="Quantidade De Agua(Irrigação)" type="text" id="quantidade_agua_irrigacao" id="" />
+        <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
+          <input type="number" id="temperatura_ideal" style="width: 25% !important;" />
+          <input type="number" id="umidade_ideal" style="width: 25% !important;" />
+          <input type="number" id="iluminacao_ideal" style="width: 25% !important;" />
+        </div>
+        <input type="button" onclick="atualizar()" value="Concluir" id="button">
       </form>
     </div>
     <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
