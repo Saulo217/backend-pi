@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 85%;
+}
+
+.app__logo {
+  width: 40px;
+}
+
+.profile__logo {
+  width: 40px;
+}
+
+header > strong {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.corpo{
+  font-family: 'Montserrat',sans-serif;
+  padding: .5rem;
+  outline: none;
+  border: solid 2px #225300;
+  border-radius: 10px;
+}
