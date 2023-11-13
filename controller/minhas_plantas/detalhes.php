@@ -54,9 +54,12 @@ $array_dicas = dicas($data["id_planta"]);
 $array = detalhes($data["id_planta"]);
 
 echo json_encode(array(
-    "temperatura" => number_format((double) $array['temperatura'], 1),
-    "umidade" => number_format((double) $array['umidade'], 1),
-    "nivel_agua" => number_format((double) $array['nivel_agua'], 1),
-    "iluminacao" => number_format((double) $array['iluminacao'], 1),
+    "success" => true,
+    "dados" => array(
+        "temperatura" => number_format((double) $array['temperatura'], 1),
+        "umidade" => number_format((double) $array['umidade'], 1),
+        "nivel_agua" => number_format((double) $array['nivel_agua'], 1),
+        "iluminacao" => number_format((double) $array['iluminacao'], 1),
+    ),
     "dicas" => $array_dicas,
 ));

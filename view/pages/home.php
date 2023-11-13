@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/home.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/homeHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,23 +42,22 @@
           if(json.success) {
             console.log(json.result);
             for (let i = 0; i < json.result.length; i++) {
-              document.querySelector("div.plants__cards").innerHTML = `
-                <div class='plant__card' onclick="goToPage('details')">
-                  <img src='http://locahost/backend-pi/uploads/${json.result[i].foto_planta}' alt='' />
+              document.querySelector("div.plants__cards").innerHTML += `
+                <div class='plant__card' onclick="handler(${json.result[i].id_planta}, '${json.result[i].apelido}')">
+                  <img src='http://localhost/backend-pi/uploads/${json.result[i].foto_planta}' alt='' />
                   <div class='plant__info'>
                     <strong>${json.result[i].apelido}</strong>
                     <div class='plant__info__details'>
                       <div>
                         <img src='../assets/umidade_icon.png' alt='' />
-                        <span>${json.result[i].umidade_ideal.substring(0, 5)} %</span>
+                        <span>${json.result[i].umidade_ideal.substring(0, 4)} %</span>
                       </div>
                       <div>
                         <img src='../assets/temp_icon.png' alt='' />
-                        <span>${json.result[i].temperatura_ideal.substring(0, 5)} °C</span>
+                        <span>${json.result[i].temperatura_ideal.substring(0, 4)} °C</span>
                       </div>
                       <span class='link'>ver mais</span>
                     </div>
-                    <span class="link">ver mais</span>
                   </div>
                 </div>
               `;
@@ -67,8 +67,8 @@
           }
         })();
       </script>
-      <img onclick="goToPage('new_plant')" class="new_plant"  src="../assets/add_icon.png" alt="" />
       </div>
+      <img onclick="goToPage('new_plant')" class="new_plant"  src="../assets/add_icon.png" alt="" />
     </div>
     <footer></footer>
   </body>
