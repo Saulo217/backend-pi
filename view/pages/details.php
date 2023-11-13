@@ -23,7 +23,7 @@
         <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
     </header>
     <div class="main">
-      <strong class="plant__name"><script> document.body.innerHTML += sessionStorage.getItem("apelido"); </script></strong>
+      <strong class="plant__name"><script> document.querySelector("strong.plant__name").innerHTML += sessionStorage.getItem("apelido"); </script></strong>
     </div>
     <div class="plant__status__cards__container">
         <script>
