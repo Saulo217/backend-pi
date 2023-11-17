@@ -7,7 +7,9 @@
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/new_plant.css" />
-    <script type="modules" src="http://localhost/backend-pi/view/js/plantsHandler.js"></script>
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="http://localhost/backend-pi/utils/urls.js"></script>
+    <script src="http://localhost/backend-pi/view/js/selectPlant.js" defer></script>
     <script src="../js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,6 +31,7 @@
       <form class="form">
         <label for="nomeCientifico">Espécie</label>
         <select id="nomeCientifico">
+
         </select>
         <label for="apelido">Nome Carinhoso</label>
         <input placeholder="" type="" name="apelido" id="apelido" />

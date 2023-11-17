@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script src="../js/main.js"></script>
+    <script src="http://localhost/backend-pi/view/js/selectPlant.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +25,9 @@
         <strong style="color: #225300; font-size: 25px;">Atualizar</strong><br>
       </label>
       <form action="http://localhost/backend-pi/controller/usuario/cadastro.php" class="form" method="post">
-        <input placeholder="Titulo" type="text" name="titulo" id="" />
+        <select id="nomeCientifico"></select>
+        <input placeholder="Titulo" type="text" name="titulo" id="titulo" />
+
         <input placeholder="Subtitulo" type="text" name="subtitulo" id="" />
         <textarea name="corpo" class="corpo" placeholder="Corpo" cols="10" rows="10"></textarea>
         <input type="submit" value="Atualizar" id="button">

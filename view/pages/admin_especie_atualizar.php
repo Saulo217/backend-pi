@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script src="../js/main.js"></script>
     <script src="../js/especieHandler.js"></script>
+    <script src="http://localhost/backend-pi/view/js/selectPlant.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +29,7 @@
         </strong>
       </label>
       <form class="form">
-        <input placeholder="Nome Cientifico" type="text" id="nome_cientifico" />
+        <select id="nomeCientifico"></select>
         <input placeholder="Nome Popular" type="text" id="nome_popular" />
         <input placeholder="Data Inicio Florescimento" type="datetime-local" id="data_inicio_florescimento" id="" />
         <input placeholder="Data Fim Florescimento" type="datetime-local" id="data_fim_florescimento" id="" />

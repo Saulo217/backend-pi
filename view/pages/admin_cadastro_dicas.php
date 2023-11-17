@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script src="../js/main.js"></script>
     <script src="../js/plantsHandler.js"></script>
+    <script src="http://localhost/backend-pi/view/js/selectPlant.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +26,9 @@
         <strong style="color: #225300;">Nova Dica</strong>
       </label>
       <form class="form" >
-        <input placeholder="Nome  Cientifico" type="text" id="nome_cientifico" />
+        <select id="nomeCientifico">
+
+        </select>
         <input placeholder="Titulo" type="text" id="titulo" />
         <input placeholder="Subtitulo" type="text" id="subtitulo" />
         <textarea name="corpo" class="corpo" placeholder="Corpo" cols="10" rows="10" id="corpo"></textarea>
