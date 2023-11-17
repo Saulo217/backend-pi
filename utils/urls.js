@@ -1,5 +1,4 @@
-urls
 (async () => {
-    const data = await fetch("http://localhost/backend-pi/utils/utils.json");
-    urls = data.json();
+    const data = await fetch("http://localhost/backend-pi/utils/urls.json");
+    urls = await data.json();
 })();

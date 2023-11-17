@@ -51,3 +51,14 @@ async function atualizar() {
     alert("Erro ao Cadastrar!");
   }
 }
+
+async function list() {
+  const data = await fetch(urls.controllers.plants + "listar.php");
+  const plantas = await data.json().plantas;
+
+  for(let i = 0; i < plantas; i++) {
+    document.getElementById("nomeCientifico").innerHTML = `
+      <option value='${plantas[i].nome_cientifico}'>${plantas[i].nome_cientifico}</option>
+    `;
+  }
+}

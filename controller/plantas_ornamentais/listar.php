@@ -2,8 +2,6 @@
 require_once "../../connection.php";
 require_once "../../model/plantas_ornamentais.php";
 
-$data = json_encode(file_get_contents("php://input"), true);
-
 $pdo = NewConnection("smart_eco");
 $pdo->query("USE smart_eco");
 

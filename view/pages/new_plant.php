@@ -7,7 +7,7 @@
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/new_plant.css" />
-    <script src="../js/main.js"></script>
+    <script type="modules" src="http://localhost/backend-pi/view/js/plantsHandler.js"></script>
     <script src="../js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +28,8 @@
       </div>
       <form class="form">
         <label for="nomeCientifico">Espécie</label>
-        <input name="nomeCientifico" type="text" id="nomeCientifico" />
+        <select id="nomeCientifico">
+        </select>
         <label for="apelido">Nome Carinhoso</label>
         <input placeholder="" type="" name="apelido" id="apelido" />
         <label for="dtInicio">Quando você começou a cuidar dela?</label>

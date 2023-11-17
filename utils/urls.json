@@ -3,7 +3,8 @@
   "views": {
     "base": "http://localhost/backend-pi/view/",
     "js": "http://localhost/backend-pi/view/js/",
-    "css": "http://localhost/backend-pi/view/css/"
+    "css": "http://localhost/backend-pi/view/css/",
+    "assets": "http://localhost/backend-pi/view/assets/"
   },
   "pages": {
     "base": "http://localhost/backend-pi/view/pages/",
