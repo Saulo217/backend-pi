@@ -1,6 +1,6 @@
 async function cadastro() {
   const data = {
-    nomeCientifico: document.getElementById("nome_cientifico").value,
+    nomeCientifico: document.getElementById("nomeCientifico").value,
     titulo: document.getElementById("titulo").value,
     subtitulo: document.getElementById("subtitulo").value,
     corpo: document.getElementById("corpo").value,

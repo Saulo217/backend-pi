@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/new_plant.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/utils/urls.js"></script>
+    <script src="http://localhost/backend-pi/view/js/plantsHandler.js" defer></script>
     <script src="http://localhost/backend-pi/view/js/selectPlant.js" defer></script>
     <script src="../js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +39,7 @@
         <label for="cor">Cor:</label>
         <input type="color" name="cor" value="#86A789" id="cor" />
         <br />
-        <input type="button" value="Cadastrar" id="button" onclick="newPlantHandler()" />
+        <input type="button" value="Cadastrar" id="button" onclick="newPlant()" />
       </form>
     </div>
     <footer>

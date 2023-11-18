@@ -124,8 +124,11 @@ CREATE TABLE
     );
 
 
-INSERT INTO Usuario VALUES ("okamoto@gmail.com", "Okamoto", "2023-07-07", "usuario.png", "12345", "okamoto", "ROLE_USUARIO"),
-("odake@gmail.com", "Odake", "2023-08-08", "usuario.png", "12345", "odake", "ROLE_USUARIO"), ("hioji@gmail.com", "Hioji", "2023-09-09", "usuario.png", "12345", "hioji", "ROLE_USUARIO");
+INSERT INTO Usuario VALUES 
+("okamoto@gmail.com", "Okamoto", "2023-07-07", "usuario.png", "12345", "okamoto", "ROLE_USUARIO"),
+("odake@gmail.com", "Odake", "2023-08-08", "usuario.png", "12345", "odake", "ROLE_USUARIO"),
+("hioji@gmail.com", "Hioji", "2023-09-09", "usuario.png", "12345", "hioji", "ROLE_USUARIO");
+("adm@gmail.com", "adm", "2023-09-09", "usuario.png", "adm123", "adm", "ROLE_ADMINISTRADOR");
  
 INSERT INTO bugs(descricao, data_contato, data_correcao) VALUES ("Não consigo excluir minha planta!", "2023-01-01", "2023-02-02"), ("Carregamento lento da enciclopédia", "2023-05-05", "2023-06-07"), ("Erro nos sensores", "2023-08-08", "2023-09-12");
  

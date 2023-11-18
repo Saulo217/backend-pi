@@ -19,4 +19,6 @@ if (isset($data["admin"]) && isset($data["admPass"])) {
     } else {
         echo json_encode(array("success" => false));
     }
+} else {
+    echo json_encode(array("success" => false));
 }

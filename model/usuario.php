@@ -132,14 +132,15 @@ class Usuario
 
     public function login(PDO $pdo)
     {
-        $sql = "SELECT * FROM usuario WHERE usuario = :usuario AND senha = :senha";
+        $sql = "SELECT usuario, senha FROM usuario WHERE usuario = :usuario AND senha = :senha";
 
         try {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(':usuario', $this->getUsuario());
             $sth->bindValue(':senha', $this->getSenha());
-            
-            if ($sth->execute()) {
+            $sth->execute();
+            $array = $sth->fetch(PDO::FETCH_ASSOC);
+            if (isset($array["senha"]) && isset($array["usuario"])) {
                 return true;
             } else {
                 return false;

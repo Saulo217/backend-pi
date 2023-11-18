@@ -7,7 +7,7 @@ window.onload = async () => {
   for (let i = 0; i < json.plantas.length; i++) {
     const option = document.createElement("option");
     option.setAttribute("value", json.plantas[i].nome_cientifico);
-    option.innerText = json.plantas[i].nome_cientifico;
+    option.innerText = json.plantas[i].nome_popular;
 
     document.getElementById("nomeCientifico").appendChild(option);
   }

@@ -1,17 +1,17 @@
 {
-    "start_url": "http://localhost/backend-pi/",
-    "scope": "/",
-    "name": "Smart Eco",
-    "display": "standalone",
-    "orientation": "portrait",
-    "theme_color": "#ffffff",
-    "backeground_color": "#cee9ba",
-    "icons": [
-        {
-            "src": "http://localhost/smart_eco_assets/icons/manifest-icon-192.maskable.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable any"
-        }
-    ]
+  "start_url": "http://localhost/backend-pi/",
+  "scope": "/",
+  "name": "Smart Eco",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "backeground_color": "#cee9ba",
+  "icons": [
+    {
+      "src": "http://localhost/backend-pi/view/assets/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
 }
