@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/details.css" />
-    <script src="../js/main.js"></script>
-    <script src="../js/detailsHandler.js"></script>
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/details.css" />
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="http://localhost/backend-pi/view/js/detailsHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +21,7 @@
     <header>
         <button onclick="goToPage('home')"><</button>
         <strong>SmartEco</strong>
-        <img src="../assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
+        <img src="http://localhost/backend-pi/view/assets/profile_icon.png" alt="app_logo" class="profile__logo" onclick="goToPage('profile')" />
     </header>
     <div class="main">
       <strong class="plant__name"><script> document.querySelector("strong.plant__name").innerHTML += sessionStorage.getItem("apelido"); </script></strong>
@@ -40,7 +40,7 @@
                   <div class="plant__status__card" style="background-color: #7bc779">
                     <div class="plant__status__card__header">
                       <div class="plant__status__card__header__icon" style="background-color: #56aa53">
-                        <img src="../assets/drop_icon.png" style="width: 25px" alt="" />
+                        <img src="http://localhost/backend-pi/view/assets/drop_icon.png" style="width: 25px" alt="" />
                       </div>
                       <span>${Object.keys(json.dados)[i]}</span>
                     </div>

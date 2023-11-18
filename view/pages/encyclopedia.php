@@ -19,9 +19,9 @@ quick_sort($array, 0, sizeof($array) - 1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enciclopedia</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/encyclopedia.css" />
-    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/encyclopedia.css" />
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

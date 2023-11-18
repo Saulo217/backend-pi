@@ -30,9 +30,7 @@
       </div>
       <form class="form">
         <label for="nomeCientifico">Espécie</label>
-        <select id="nomeCientifico">
-
-        </select>
+        <select id="nomeCientifico"></select>
         <label for="apelido">Nome Carinhoso</label>
         <input placeholder="" type="" name="apelido" id="apelido" />
         <label for="dtInicio">Quando você começou a cuidar dela?</label>

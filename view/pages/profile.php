@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/profile.css" />
-    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/profile.css" />
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
     </header>
     <div class="main">
       <div class="profile__info">
-        <img src="../assets/img_profile.png" alt="app_logo" class="app__logo" />
+        <img src="http://localhost/backend-pi/view/assets/img_profile.png" alt="app_logo" class="app__logo" />
         <script>
           (async () => {
             usuario = sessionStorage.getItem("usuario");

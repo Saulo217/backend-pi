@@ -29,4 +29,9 @@
       </div>
     </div>
   </body>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register("http://localhost/backend-pi/worker.js");
+    }
+  </script>
 </html>

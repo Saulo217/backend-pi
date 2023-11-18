@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/login.css" />
-    <script src="../js/main.js"></script>
-    <script src="../js/formHandlers.js"></script>
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/login.css" />
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="http://localhost/backend-pi/view/js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,7 @@
     <header><button onclick="goToPage('index')"></button></header>
     <div class="main">
       <div class="section__info">
-        <img src="../assets/app_icon.png" alt="app_logo" class="app__logo" />
+        <img src="http://localhost/backend-pi/view/assets/app_icon.png" alt="app_logo" class="app__logo" />
         <strong>Login</strong>
       </div>
       <form
@@ -36,7 +36,7 @@
       </div>
     </div>
     <footer>
-      <img src="../assets/footer_background.png" alt="footer_background" />
+      <img src="http://localhost/backend-pi/view/assets/footer_background.png" alt="footer_background" />
     </footer>
   </body>
 </html>

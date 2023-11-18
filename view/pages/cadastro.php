@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/cadastro.css" />
-    <script src="../js/main.js"></script>
-    <script src="../js/formHandlers.js"></script>
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
+    <link rel="stylesheet" href="http://localhost/backend-pi/view/css/cadastro.css" />
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="http://localhost/backend-pi/view/js/formHandlers.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,7 @@
     <header><button onclick="goToPage('login')"><</button></header>
     <div class="main">
       <label for="upload" class="section__info">
-        <img src="../assets/register_icon.png" aria-hidden="true" alt="app_logo" class="app__logo" />
+        <img src="http://localhost/backend-pi/view/assets/register_icon.png" aria-hidden="true" alt="app_logo" class="app__logo" />
         <input placeholder="" type="file" name="foto" id="upload" style="display: none;" />
         <strong>Cadastro</strong>
       </label>
@@ -34,6 +34,6 @@
         <input type="button" value="Concluir" id="button" onclick="cadastroHandler()">
       </form>
     </div>
-    <footer><img src="../assets/footer_background.png" alt="footer_background" /></footer>
+    <footer><img src="http://localhost/backend-pi/view/assets/footer_background.png" alt="footer_background" /></footer>
   </body>
 </html>
