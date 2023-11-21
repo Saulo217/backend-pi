@@ -27,65 +27,14 @@
       <strong class="plant__name"><script> document.querySelector("strong.plant__name").innerHTML += sessionStorage.getItem("apelido"); </script></strong>
     </div>
     <div class="plant__status__cards__container">
-        <script>
-          (async function handler() {
-            id_planta = sessionStorage.getItem("id_planta");
-            json = await post(myplants + "detalhes.php", {
-              id_planta,
-            });
-
-            if (json.success === true) {
-              for(let i = 0; i < Object.keys(json.dados).length; i++) {
-                document.querySelector("div.plant__status__cards__container").innerHTML += `
-                  <div class="plant__status__card" style="background-color: #7bc779">
-                    <div class="plant__status__card__header">
-                      <div class="plant__status__card__header__icon" style="background-color: #56aa53">
-                        <img src="http://localhost/backend-pi/view/assets/drop_icon.png" style="width: 25px" alt="" />
-                      </div>
-                      <span>${Object.keys(json.dados)[i]}</span>
-                    </div>
-                    <strong>${Object.values(json.dados)[i]}°c</strong>
-                    <div class="plant__status__card__footer">
-                      <p>Recomendado</p>
-                      <p>Por volta de 70%</p>
-                    </div>
-                  </div>
-                `;
-              }
-            } else {
-              document.querySelector("div.plant__status__cards__container").innerHTML += `
-                <h1> Nenhum Dado Coletado </h1>
-              `;
-            }
-          })();
-        </script>
+      <!-- Rendered via Javascript on detailsHandler.js -->
     </div>
     <section class="flowering__section">
       <h3>Florecimento</h3>
     </section>
     <section class="help__section">
       <h3>Cuidados e Dicas</h3>
-      <script>
-        (async () => {
-          id_planta = sessionStorage.getItem("id_planta");
-          const json = await post(myplants + "detalhes.php", { id_planta });
-          if(json.success) {
-            for (let i of json.dicas) {
-              document.querySelector("section.help__section").innerHTML += `
-                <div class='help__balloon'>
-                  <section>${i.corpo}</section>
-                </div>
-              `;
-            }
-          } else {
-            document.querySelector("div.help__section").innerHTML += `
-                <div class='help__balloon'>
-                  <section>Nenhuma Dica Encontrada</section>
-                </div>
-              `;
-          }
-        })();
-      </script>
+      <!-- Rendered via Javascript on detailsHandler.js -->
     </section>
   </body>
 </html>

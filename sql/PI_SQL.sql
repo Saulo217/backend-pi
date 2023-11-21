@@ -43,7 +43,7 @@ CREATE TABLE
     umidade (
         id_umidade INT (5) PRIMARY KEY auto_increment,
         ligado BOOLEAN NOT NULL,
-        umidade DECIMAL(5, 5) NOT NULL,
+        umidade DECIMAL(10, 5) NOT NULL,
         data_captura TIMESTAMP
     );
 
@@ -124,10 +124,10 @@ CREATE TABLE
     );
 
 
-INSERT INTO Usuario VALUES 
+INSERT INTO usuario VALUES 
 ("okamoto@gmail.com", "Okamoto", "2023-07-07", "usuario.png", "12345", "okamoto", "ROLE_USUARIO"),
 ("odake@gmail.com", "Odake", "2023-08-08", "usuario.png", "12345", "odake", "ROLE_USUARIO"),
-("hioji@gmail.com", "Hioji", "2023-09-09", "usuario.png", "12345", "hioji", "ROLE_USUARIO");
+("hioji@gmail.com", "Hioji", "2023-09-09", "usuario.png", "12345", "hioji", "ROLE_USUARIO"),
 ("adm@gmail.com", "adm", "2023-09-09", "usuario.png", "adm123", "adm", "ROLE_ADMINISTRADOR");
  
 INSERT INTO bugs(descricao, data_contato, data_correcao) VALUES ("Não consigo excluir minha planta!", "2023-01-01", "2023-02-02"), ("Carregamento lento da enciclopédia", "2023-05-05", "2023-06-07"), ("Erro nos sensores", "2023-08-08", "2023-09-12");
@@ -136,7 +136,10 @@ INSERT INTO interacao(id_bug, email_usuario) VALUES (1, "okamoto@gmail.com"), (2
  
 INSERT INTO irrigacao (quantidade, ligado, tempo) VALUES (10.32, true, "01:30"), (32.10, false, "00:45"), (40.123, false, "01:00");
  
-INSERT INTO umidade (ligado, umidade, data_captura) VALUES (true, 30.0, "2023-01-01 06:30"), (true, 31.05, "2023-02-01 09:32"), (true, 32.10, "2023-04-03 10:30");
+INSERT INTO umidade (ligado, umidade, data_captura) VALUES 
+(true, 30.0, "2023-01-01 06:30"), 
+(true, 31.05, "2023-02-01 09:32"), 
+(true, 32.10, "2023-04-03 10:30");
  
 INSERT INTO temperatura (ligado, temperatura, data_captura) VALUES (true, 12.50, "2023-01-01 06:30"), (true, 41.05, "2023-02-01 09:32"), (true, 10.10, "2023-04-03 10:30");
  
