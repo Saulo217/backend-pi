@@ -22,6 +22,7 @@ quick_sort($array, 0, sizeof($array) - 1);
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/encyclopedia.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="http://localhost/backend-pi/view/js/especieHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,19 +40,7 @@ quick_sort($array, 0, sizeof($array) - 1);
       <input type="search" class="search" />
     </div>
     <div class="plant__cards__container">
-      <?php
-for ($i = 0; $i < sizeof($array); $i++) {
-    $img = $array[$i]["foto_planta"];
-    $nome = $array[$i]["nome_popular"];
-    echo "
-            <div class='plant__card' style='background-color: #e3d6b3'>
-              <span>$nome</span>
-              <img src='http://localhost/backend-pi/uploads/cards/$img' alt='' />
-            </div>
-          ";
-}
-
-?>
+      <!-- Rendered via Javascript on especieHandler.js -->
     </div>
   </body>
 </html>

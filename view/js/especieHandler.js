@@ -1,12 +1,13 @@
-file = null;
-window.onload = () => {
-  document.getElementById("foto_planta").addEventListener("change", (event) => {
-    file = event.target.files[0].name;
-    console.log(file);
-  });
-};
-
 async function cadastro() {
+  file = null;
+  window.onload = () => {
+    document
+      .getElementById("foto_planta")
+      .addEventListener("change", (event) => {
+        file = event.target.files[0].name;
+        console.log(file);
+      });
+  };
   const data = {
     nomeCientifico: document.getElementById("nomeCientifico").value,
     nomePopular: document.getElementById("nome_popular").value,
@@ -62,3 +63,24 @@ async function atualizar() {
     alert("Erro ao Cadastrar!");
   }
 }
+
+async function listar() {
+  const json = await post(plants + "listar.php", null);
+
+  if (json.success) {
+    json.plantas.forEach((element) => {
+      document.querySelector("div.plant__cards__container").innerHTML += `
+        <div class='plant__card' style='background-color: #e3d6b3'>
+          <span>${element.nome_popular}</span>
+          <img width='165' height='165' src='http://localhost/backend-pi/uploads/cards/${element.foto_planta}' alt='' />
+        </div>
+      `;
+    });
+  } else {
+    alert("No Plants!!");
+  }
+}
+
+window.onload = () => {
+  listar();
+};
