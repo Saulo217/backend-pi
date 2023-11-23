@@ -49,3 +49,5 @@ async function cadastroHandler() {
     alert("Erro ao Cadastrar!");
   }
 }
+
+
