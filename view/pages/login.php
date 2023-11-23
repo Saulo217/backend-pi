@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/login.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/view/js/formHandlers.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +18,11 @@
     />
   </head>
   <body class="container">
-    <header><button onclick="goToPage('index')"></button></header>
+    <header>
+      <button onclick="goToPage('index')">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
+    </header>
     <div class="main">
       <div class="section__info">
         <img src="http://localhost/backend-pi/view/assets/app_icon.png" alt="app_logo" class="app__logo" />

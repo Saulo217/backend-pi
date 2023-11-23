@@ -16,7 +16,9 @@
 <body>
 <body class="container">
   <header>
-    <button onclick="goToPage('admin_app')"><</button>
+    <button onclick="goToPage('admin_app')">
+      <i class="fa-solid fa-circle-arrow-left"></i>
+    </button>
   </header>
   <div class="main">
     <img src="http://localhost/backend-pi/view/assets/enviados.png" aria-hidden="true" alt="app_logo" class="app__logo"/>

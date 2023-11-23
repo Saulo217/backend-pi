@@ -15,7 +15,9 @@
 </head>
 <body>
   <header>
-    <button onclick="goToPage('admin_app')"><</button>
+    <button onclick="goToPage('admin_app')">
+      <i class="fa-solid fa-circle-arrow-left"></i>
+    </button>
   </header>
   <section class="container-body">
     <article class="title-page">

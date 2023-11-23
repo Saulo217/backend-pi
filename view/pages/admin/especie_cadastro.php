@@ -19,7 +19,11 @@
     />
   </head>
   <body class="container">
-    <header><button onclick="goToPage('login')"><</button></header>
+    <header>
+      <button onclick="goToPage('login')">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
+    </header>
     <div class="main">
       <label for="foto_planta" class="section__info">
         <img src="http://localhost/backend-pi/view/assets/lotus.png" aria-hidden="true" alt="app_logo" class="app__logo" />

@@ -21,7 +21,9 @@
   </head>
   <body class="container">
     <header>
-      <button onclick="goToPage('home')"><</button>
+      <button onclick="goToPage('home')">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
       <strong>Nova Planta</strong>
       <div></div>
     </header>

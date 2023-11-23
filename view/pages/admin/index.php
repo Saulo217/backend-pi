@@ -17,7 +17,11 @@
     />
   </head>
   <body class="container">
-    <header><button onclick="goToPage('index')"></button></header>
+    <header>
+      <button onclick="goToPage('index')">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
+    </header>
     <div class="main">
       <div class="section__info">
         <img src="http://localhost/backend-pi/view/assets/app_icon.png" alt="app_logo" class="app__logo" />

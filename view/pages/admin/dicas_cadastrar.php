@@ -18,7 +18,11 @@
     />
   </head>
   <body class="container">
-    <header><button onclick="goToPage('admin_dicas')"><</button></header>
+    <header>
+      <button onclick="goToPage('admin_dicas')">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
+    </header>
     <div class="main">
       <label for="upload" class="section__info">
         <img src="http://localhost/backend-pi/view/assets/cadastro_dicas.png" aria-hidden="true" alt="app_logo" class="app__logo" />
