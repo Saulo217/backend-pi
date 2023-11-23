@@ -7,6 +7,7 @@
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/encyclopedia.css" />
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/view/js/especieHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />

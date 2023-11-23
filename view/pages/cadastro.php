@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/cadastro.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/view/js/formHandlers.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,7 +35,7 @@
         <input placeholder="Data de Nascimento" type="datetime-local" name="datanasc" id="datanasc" />
         <input placeholder="Usuario" type="text" name="usuario" id="usuario" />
         <input placeholder="Senha" type="text" name="senha" id="senha" />
-        
+
         <input type="button" value="Concluir" id="button" onclick="cadastroHandler()">
       </form>
     </div>

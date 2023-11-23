@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/new_plant.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/utils/urls.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <script src="http://localhost/backend-pi/view/js/plantsHandler.js" defer></script>
     <script src="http://localhost/backend-pi/view/js/selectPlant.js" defer></script>
     <script src="../js/formHandlers.js"></script>
