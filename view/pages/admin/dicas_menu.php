@@ -14,12 +14,12 @@
     <div class="container">
       <div class="button">
         <img src="http://localhost/backend-pi/view/assets/button_vase.png">
-        <a href="http://localhost/backend-pi/view/pages/admin/admin_cadastro_dicas.php">
+        <a href="http://localhost/backend-pi/view/pages/admin/dicas_cadastrar.php">
           Cadastro
         </a>
       </div>
       <div class="button">
-        <a href="http://localhost/backend-pi/view/pages/admin/admin_manipular_dicas.php">
+        <a href="http://localhost/backend-pi/view/pages/admin/dicas_atualizar.php">
           Manipular <br> Dicas
         </a>
         <img src="http://localhost/backend-pi/view/assets/button_plant.png">

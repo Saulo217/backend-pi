@@ -20,7 +20,7 @@
   </head>
   <body class="container">
     <header>
-      <button onclick="goToPage('login')">
+      <button onclick="goToPage('admin/especie_menu')">
         <i class="fa-solid fa-circle-arrow-left"></i>
       </button>
     </header>

@@ -28,7 +28,7 @@ async function cadastro() {
   const json = await post(plants + "cadastrar.php", data);
 
   if (json.success === true) {
-    goToPage("admin_dicas");
+    goToPage("admin/especie_menu");
   } else {
     alert("Erro ao Cadastrar!");
   }
@@ -55,10 +55,10 @@ async function atualizar() {
     foto_planta: file,
   };
   console.log(data);
-  const json = await post(plants + "cadastrar.php", data);
+  const json = await post(plants + "atualizar.php", data);
 
   if (json.success === true) {
-    goToPage("admin_dicas");
+    goToPage("admin/especie_menu");
   } else {
     alert("Erro ao Cadastrar!");
   }

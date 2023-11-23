@@ -25,7 +25,10 @@
         <button onclick="goToPage('login')">Entrar</button>
         <button onclick="goToPage('cadastro')">Registre-se</button>
 
-        <a href="http://localhost/backend-pi/view/pages/admin_login.php">DevMode
+        <a 
+          href="http://localhost/backend-pi/view/pages/admin/index.php"
+          style="text-decoration: none; color: #ffffff; font-weight: bold;"
+        >< DevMode ></a>
       </div>
     </div>
   </body>

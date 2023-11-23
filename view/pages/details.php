@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/details.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/view/js/detailsHandler.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

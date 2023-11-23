@@ -44,7 +44,7 @@
             console.log(json.result);
             for (let i = 0; i < json.result.length; i++) {
               document.querySelector("div.plants__cards").innerHTML += `
-                <div class='plant__card' onclick="handler(${json.result[i].id_planta}, '${json.result[i].apelido}')">
+                <div class='plant__card' onclick="handler('${json.result[i].id_planta}', '${json.result[i].apelido}')">
                   <img src='http://localhost/backend-pi/uploads/${json.result[i].foto_planta}' alt='' />
                   <div class='plant__info'>
                     <strong>${json.result[i].apelido}</strong>

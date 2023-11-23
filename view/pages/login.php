@@ -32,8 +32,8 @@
         class="form"
       >
         <input placeholder="Usuário" type="text" name="usuario" id="usuario" />
-        <input placeholder="Senha" type="text" name="senha" id="senha" />
-        <input type="button" value="login" id="button" onclick="loginHandler()" />
+        <input placeholder="Senha" type="password" name="senha" id="senha" />
+        <input type="button" value="Login" id="button" onclick="loginHandler()" />
       </form>
       <div class="sigin__options">
         <p>Não Possuí Cadastro?</p>

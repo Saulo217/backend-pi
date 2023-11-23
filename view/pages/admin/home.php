@@ -11,12 +11,12 @@
     <div class="container option_container">
         <h1>Funções</h1>
         <div class="option app">
-          <a href="http://localhost/backend-pi/view/pages/admin/admin_app.php">
+          <a href="http://localhost/backend-pi/view/pages/admin/especie_menu.php">
             App 
           </a>
         </div>
         <div class="option bugs">
-          <a href="http://localhost/backend-pi/view/pages/admin/admin_bugs.php">
+          <a href="http://localhost/backend-pi/view/pages/admin/bugs_lista.php">
             Bugs
           </a>
         </div>

@@ -6,6 +6,8 @@
     <title>Dicas</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" type="text/css" href="http://localhost/backend-pi/view/css/admin.css">
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <style>
         @font-face {
             font-family: "Montserrat-Bold";
@@ -16,7 +18,7 @@
 <body>
 <body class="container">
   <header>
-    <button onclick="goToPage('admin_app')">
+    <button onclick="goToPage('admin/home')">
       <i class="fa-solid fa-circle-arrow-left"></i>
     </button>
   </header>
@@ -31,7 +33,7 @@
       alt="app_logo"
       class="app__naolido"
     />
-    <div class="enviados_card">
+    <div class="enviados_card" onclick="goToPage('admin/bugs_detalhes')">
       <p class="ti1">Marcelo</p>
       <p class="ti2">Boa noite, meu app está um pouco travado.</p>
     </div>

@@ -1,11 +1,5 @@
 <?php
 require_once "../../connection.php";
-require_once "../../model/minhas_plantas.php";
-require_once "../../model/historico.php";
-require_once "../../model/umidade.php";
-require_once "../../model/iluminacao.php";
-require_once "../../model/nivel_agua.php";
-require_once "../../model/temperatura.php";
 
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -53,13 +47,25 @@ function dicas($id)
 $array_dicas = dicas($data["id_planta"]);
 $array = detalhes($data["id_planta"]);
 
-echo json_encode(array(
-    "success" => true,
-    "dados" => array(
+if($array == false) {
+    $dados = false;
+} else {
+    $dados = array(
         "temperatura" => number_format((double) $array['temperatura'], 1),
         "umidade" => number_format((double) $array['umidade'], 1),
         "nivel_agua" => number_format((double) $array['nivel_agua'], 1),
         "iluminacao" => number_format((double) $array['iluminacao'], 1),
-    ),
-    "dicas" => $array_dicas,
+    );
+}
+
+if($array_dicas == false) {
+    $dicas = false;
+} else {
+    $dicas = $array_dicas;
+}
+
+echo json_encode(array(
+    "success" => true,
+    "dados" => $dados,
+    "dicas" => $dicas,
 ));

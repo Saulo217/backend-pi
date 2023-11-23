@@ -7,6 +7,7 @@
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/new_plant.css" />
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/utils/urls.js"></script>
     <script src="http://localhost/backend-pi/view/js/plantsHandler.js" defer></script>

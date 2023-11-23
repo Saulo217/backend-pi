@@ -13,12 +13,12 @@
     <div class="container">
       <div class="button">
         <img src="http://localhost/backend-pi/view/assets/admin_especie_button_plant.png">
-        <a href="http://localhost/backend-pi/view/pages/admin_cadastro_dicas.php">
+        <a href="http://localhost/backend-pi/view/pages/admin/dicas_cadastrar.php">
           Cadastro
         </a>
       </div>
       <div class="button">
-        <a href="http://localhost/backend-pi/view/pages/admin_manipular_dicas.php">
+        <a href="http://localhost/backend-pi/view/pages/admin/especie_atualizar.php">
           Manipular <br> Espécies
         </a>
         <img src="http://localhost/backend-pi/view/assets/admin_especie_button_hand_plant.png">

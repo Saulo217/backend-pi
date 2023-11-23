@@ -6,6 +6,9 @@
     <title>dicas</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" type="text/css" href="http://localhost/backend-pi/view/css/admin.css">
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
+    <script src="http://localhost/backend-pi/view/js/main.js"></script>
+
     <style>
         @font-face {
             font-family: "Montserrat-Bold";
@@ -15,7 +18,7 @@
 </head>
 <body>
   <header>
-    <button onclick="goToPage('admin_app')">
+    <button onclick="goToPage('admin/bugs_lista')">
       <i class="fa-solid fa-circle-arrow-left"></i>
     </button>
   </header>

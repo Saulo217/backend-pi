@@ -89,6 +89,24 @@ class Dicas
         }
     }
 
+    public function update(PDO $pdo) {
+        $sql = "UPDATE dicas set subtitulo = :subtitulo, corpo = :corpo, imagens_icons = :imagensIcons, nome_cientifico = :nomeCientifico WHERE titulo = :titulo";
+
+        try {
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(":titulo", $this->getTitulo());
+            $sth->bindValue(":subtitulo", $this->getSubtitulo());
+            $sth->bindValue(":corpo", $this->getCorpo());
+            $sth->bindValue(":imagensIcons", $this->getImagensIcons());
+            $sth->bindValue(":nomeCientifico", $this->getNomeCientifico());
+            $sth->execute();
+
+
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
     public function read(PDO $pdo)
     {
         $sql = "SELECT * FROM dicas";

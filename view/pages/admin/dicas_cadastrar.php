@@ -10,6 +10,7 @@
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/view/js/plantsHandler.js"></script>
     <script src="http://localhost/backend-pi/view/js/selectPlant.js" defer></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +20,7 @@
   </head>
   <body class="container">
     <header>
-      <button onclick="goToPage('admin_dicas')">
+      <button onclick="goToPage('admin/dicas_menu')">
         <i class="fa-solid fa-circle-arrow-left"></i>
       </button>
     </header>

@@ -33,7 +33,7 @@
             const json = await post(user + "profiles.php", { usuario });
             console.log(json);
             if(json.success) {
-              document.querySelector("div.profile__info").innerHTML = `
+              document.querySelector("div.profile__info").innerHTML += `
                 <strong>${json.result.usuario}</strong>
                 <p>${json.result.email}</p>
               `;
@@ -55,7 +55,7 @@
                 usuario = sessionStorage.getItem("usuario");
                 const json = await post(user + "profiles.php", { usuario });
                 if(json.success) {
-                  document.querySelector("span#user_data").innerHTML = `
+                  document.querySelector("span#user_data").innerHTML += `
                     ${json.result.nome}<br>
                     ${json.result.email}<br>
                     ${json.result.data_nascimento}<br>

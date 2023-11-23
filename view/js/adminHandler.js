@@ -36,14 +36,14 @@ async function cadastro() {
 
 async function login() {
   const data = {
-    usuario: document.getElementById("admin").value,
-    senha: document.getElementById("admPass").value,
+    admin: document.getElementById("admin").value,
+    admPass: document.getElementById("admPass").value,
   };
   const json = await post(admin + "login.php", data);
 
   if (json.success === true) {
     sessionStorage.setItem("usuario", data.usuario);
-    goToPage("home");
+    goToPage("admin/home");
   } else {
     alert(
       "Usuário ou Senha Incorretos \n Verifique as suas informações e tente novamente!"

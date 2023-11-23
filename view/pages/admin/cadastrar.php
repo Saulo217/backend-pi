@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/cadastro.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="htp://localhost/backend-pi/view/js/adminHandler.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +19,7 @@
   </head>
   <body class="container">
     <header>
-      <button onclick="goToPage('admin_login')">
+      <button onclick="goToPage('admin/index')">
         <i class="fa-solid fa-circle-arrow-left"></i>
       </button>
     </header>

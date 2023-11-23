@@ -22,43 +22,55 @@ async function cardsHandler() {
       return {
         icon: "icon_temp.png",
         colorCard: "#e3d6b3",
-        colorHeader: "#dab659"
-      }
+        colorHeader: "#dab659",
+      };
     },
-    umidade: () => { 
+    umidade: () => {
       return {
         icon: "umidade_icon.png",
         colorCard: "#7bc779",
-        colorHeader: "#56aa53"
-      }
+        colorHeader: "#56aa53",
+      };
     },
-    iluminacao: () => { 
+    iluminacao: () => {
       return {
         icon: "light_icon.png",
         colorCard: "#f88e8e",
-        colorHeader: "#db4242"
-      }
+        colorHeader: "#db4242",
+      };
     },
-    nivel_agua: () => { 
+    nivel_agua: () => {
       return {
         icon: "water_level_icon.png",
         colorCard: "#7bc779",
-        colorHeader: "#56aa53"
-      }
-    }
-  }
+        colorHeader: "#56aa53",
+      };
+    },
+  };
   id_planta = sessionStorage.getItem("id_planta");
   json = await post(myplants + "detalhes.php", {
     id_planta,
   });
 
   if (json.success === true) {
-    for(let i = 0; i < Object.keys(json.dados).length; i++) {
-      createCard(Object.keys(json.dados)[i], Object.values(json.dados)[i], style[Object.keys(json.dados)[i]]());
+    if (json.dados) {
+      for (let i = 0; i < Object.keys(json.dados).length; i++) {
+        createCard(
+          Object.keys(json.dados)[i],
+          Object.values(json.dados)[i],
+          style[Object.keys(json.dados)[i]]()
+        );
+      }
+    } else {
+      document.querySelector(
+        "div.plant__status__cards__container"
+      ).innerHTML += `
+      <h3 style='margin-left: 15%; '> Nenhum Dado Coletado </h3>
+    `;
     }
   } else {
     document.querySelector("div.plant__status__cards__container").innerHTML += `
-      <h1> Nenhum Dado Coletado </h1>
+      <h3 style='margin-left: 15%;'> Nenhum Dado Coletado </h3>
     `;
   }
 }
@@ -66,7 +78,7 @@ async function cardsHandler() {
 async function createHints() {
   id_planta = sessionStorage.getItem("id_planta");
   const json = await post(myplants + "detalhes.php", { id_planta });
-  if(json.success) {
+  if (json.success) {
     for (let i of json.dicas) {
       document.querySelector("section.help__section").innerHTML += `
         <div class='help__balloon'>
@@ -81,9 +93,9 @@ async function createHints() {
       </div>
     `;
   }
-} 
+}
 
-window.onload = () => { 
+window.onload = () => {
   cardsHandler();
   createHints();
-}
+};
