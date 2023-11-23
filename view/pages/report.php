@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/report.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +18,9 @@
   </head>
   <body class="container">
     <header>
-      <button onclick="goToPage('home')"><</button>
+      <button onclick="goToPage('home')">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
       <strong>Reportar</strong>
       <img
         src="http://localhost/backend-pi/view/assets/profile_icon.png"
