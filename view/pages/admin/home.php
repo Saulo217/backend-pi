@@ -11,7 +11,7 @@
     <div class="container option_container">
         <h1>Funções</h1>
         <div class="option app">
-          <a href="http://localhost/backend-pi/view/pages/admin/admin_app.php">
+          <a href="http://localhost/backend-pi/view/pages/admin/admin_.php">
             App 
           </a>
         </div>

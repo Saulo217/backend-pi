@@ -6,9 +6,12 @@
     <title>dicas</title>
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" type="text/css" href="http://localhost/backend-pi/view/css/admin.css">
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <div class="wrapper_dicas">
+
     <h1>Espécies</h1>
     <div class="container">
       <div class="button">

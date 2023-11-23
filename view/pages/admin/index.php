@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/index.css" />
     <link rel="stylesheet" href="http://localhost/backend-pi/view/css/login.css" />
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <script src="http://localhost/backend-pi/view/js/adminHandler.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,9 +28,7 @@
         <img src="http://localhost/backend-pi/view/assets/app_icon.png" alt="app_logo" class="app__logo" />
         <strong>Login</strong>
       </div>
-      <form
-        class="form"
-      >
+      <form class="form">
         <input placeholder="Administrador" type="text" id="admin" />
         <input placeholder="Senha" type="password" id="admPass" />
         <input type="button" value="login" id="button" onclick="login()" />

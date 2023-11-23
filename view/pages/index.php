@@ -7,6 +7,7 @@
     <link rel="manifest" href="http://localhost/backend-pi/manifest.json">
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <script src="../js/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +26,7 @@
         <button onclick="goToPage('login')">Entrar</button>
         <button onclick="goToPage('cadastro')">Registre-se</button>
 
-        <a href="http://localhost/backend-pi/view/pages/admin_login.php">DevMode
+        <a href="http://localhost/backend-pi/view/pages/admin/index.php">DevMode
       </div>
     </div>
   </body>
