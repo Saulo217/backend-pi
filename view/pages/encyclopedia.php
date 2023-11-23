@@ -1,17 +1,3 @@
-<?php
-require_once "../../connection.php";
-require_once "../../model/plantas_ornamentais.php";
-require_once "../../model/sort.php";
-
-$pdo = NewConnection("smart_eco");
-$pdo->query("USE smart_eco");
-
-$po = new PlantasOrnamentais();
-$array = $po->readMany($pdo);
-
-quick_sort($array, 0, sizeof($array) - 1);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
