@@ -33,7 +33,7 @@
         acho muito bom e prático porém desde ontem meu app está um pouco travado.
       </p>
     </article>
-    <button class="btn-resolvido">Entrar</button>
+    <button class="btn-resolvido">Resolvido</button>
   </section>
   <footer>
     <img src="http://localhost/backend-pi/view/assets/footer_background.png" alt="footer_background" />
