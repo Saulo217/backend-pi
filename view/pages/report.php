@@ -52,7 +52,7 @@
           rows="10"
         ></textarea>
         <div class="buttons__options">
-          <button class="send__button">Enviar</button>
+          <button class="send__button">Resolvido</button>
           <button class="take__photo__button">
             <img src="../assets/img_icon.png" alt="" />
           </button>
