@@ -1,0 +1,173 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+.wrapper_dicas {
+  overflow: hidden;
+  width: 100vw;
+  height: 50vh;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Montserrat-Bold";
+  color: #214b04;
+  font-size: 35px;
+}
+
+.wrapper_dicas > .container {
+  display: inherit;
+  height: 60vh;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Montserrat-Bold";
+}
+
+.wrapper_dicas > .container > .button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 75vw;
+  height: 20vh;
+  border-radius: 20px;
+  background-color: #cee9ba;
+  box-shadow: 2px 4px 4px #225300;
+}
+
+.wrapper_dicas > .container > .button > a {
+  position: relative;
+  margin-left: 16px;
+  margin-right: 16px;
+  color: #214b04;
+  font-size: 22px;
+  z-index: 2;
+}
+
+.wrapper_dicas > .container > .button > img {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+
+.container > .link_button {
+  font-size: 18;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 8px 50px 8px 50px;
+  background-color: #225300;
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../assets/fonts/Montserrat/Montserrat-Regular.ttf")
+    format("truetype");
+}
+
+.container {
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.option_container {
+  font-family: "Montserrat-Bold";
+  font-size: 18px;
+  text-decoration: none;
+  color: #225300;
+  justify-content: space-evenly !important;
+}
+
+.option {
+  display: block;
+  width: 75%;
+  height: 20%;
+  border-radius: 10px;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+
+.app {
+  background-image: url("../assets/app.png");
+  background-size: cover;
+}
+
+.bugs {
+  background-image: url("../assets/bugs.png");
+  background-size: cover;
+}
+
+.especies {
+  background-image: url("../assets/especies.png");
+  background-size: cover;
+}
+
+.dicas {
+  background-image: url("../assets/dicas.png");
+  background-size: cover;
+}
+
+.dicas_cadastrar {
+  background-repeat: no-repeat;
+}
+
+.dicas_manipular {
+  background-repeat: no-repeat;
+}
+
+.option > a {
+  padding-left: 8px;
+  font-family: "Montserrat-Bold";
+  font-size: 32px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 25vh;
+  width: 85%;
+}
+
+header button {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background-color: #cee9ba;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+}
+
+footer {
+  margin: 0%;
+  padding-top: 20%;
+  height: 25vh;
+  width: 100%;
+  position: absolute;
+}
+
+footer img {
+  height: 130px;
+  width: 100%;
+}
+

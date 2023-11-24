@@ -7,7 +7,7 @@ function createCard(key, value, style) {
         </div>
         <span>${key}</span>
       </div>
-      <strong>${value}°c</strong>
+      <strong>${value}°C</strong>
       <div class="plant__status__card__footer">
         <p>Recomendado</p>
         <p>Por volta de 70%</p>

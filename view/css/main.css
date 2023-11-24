@@ -5,6 +5,7 @@
   align-items: center;
   background-image: url("../assets/login_background.png");
   object-fit: fill;
+  background-size: cover;
   flex: 1;
   height: 100%;
 }

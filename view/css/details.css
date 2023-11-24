@@ -17,6 +17,7 @@ header {
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
   background-image: url('../assets/header_background_echeveria.png');
+  background-size: cover;
 }
 
 header strong {

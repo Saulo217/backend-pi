@@ -11,6 +11,7 @@
     <script src="http://localhost/backend-pi/view/js/main.js"></script>
     <script src="http://localhost/backend-pi/view/js/especieHandler.js"></script>
     <script src="http://localhost/backend-pi/view/js/selectPlant.js"></script>
+    <script src="https://kit.fontawesome.com/0558079a1f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +34,7 @@
         </strong>
       </label>
       <form class="form">
-        <select id="nomeCientifico"></select>
+        <input placeholder="Nome Científico" type="text" id="nomeCientifico" />
         <input placeholder="Nome Popular" type="text" id="nome_popular" />
         <input placeholder="Data Inicio Florescimento" type="date" id="data_inicio_florescimento" />
         <input placeholder="Data Fim Florescimento" type="date" id="data_fim_florescimento" />
